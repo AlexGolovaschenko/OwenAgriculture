@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 def home(request):
-	return render(request, 'base.html')
+	return render(request, 'base_with_banner.html')
 
 def about(request):
 	return render(request, 'owen_agriculture/about_company.html')

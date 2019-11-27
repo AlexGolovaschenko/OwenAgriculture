@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'OwenAgriculture.urls'
+ROOT_URLCONF = 'owen_agriculture.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'OwenAgriculture.wsgi.application'
+WSGI_APPLICATION = 'owen_agriculture.wsgi.application'
 
 
 # Database

@@ -10,9 +10,9 @@ class ProductTopic (models.Model):
 
 
 class Product (models.Model):
+	topic = models.ForeignKey(ProductTopic, on_delete=models.CASCADE)
 	name = models.CharField(max_length=200)
 	description = models.TextField()
-	topic = models.ForeignKey(ProductTopic, on_delete=models.CASCADE)
 
 	def __str__ (self):
 		return self.name

@@ -5,7 +5,7 @@ import sys
 
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'OwenAgriculture.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'owen_agriculture.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

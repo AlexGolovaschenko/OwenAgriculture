@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class ProductTopic (models.Model):
 	headline = models.CharField(max_length=200)
 	description = models.TextField()

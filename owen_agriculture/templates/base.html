@@ -50,12 +50,12 @@
 
 	  <!-- Navbar on small screens -->
 	  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-large">
-	    <a href="#" class="w3-bar-item w3-button w3-padding-large">Птицеводство</a>
-	    <a href="#" class="w3-bar-item w3-button w3-padding-large">Свиноводство</a>
-	    <a href="#" class="w3-bar-item w3-button w3-padding-large">Проекты</a>
-	    <a href="#" class="w3-bar-item w3-button w3-padding-large">Новости</a>
-	    <a href="#" class="w3-bar-item w3-button w3-padding-large">О компании</a>
-	    <a href="#" class="w3-bar-item w3-button w3-padding-large">Контакты</a>
+	    <a href="{% url 'poultry_home' %}" class="w3-bar-item w3-button w3-padding-large">Птицеводство</a>
+	    <a href="{% url 'pigsty_home' %}" class="w3-bar-item w3-button w3-padding-large">Свиноводство</a>
+	    <a href="{% url 'projects' %}" class="w3-bar-item w3-button w3-padding-large">Проекты</a>
+	    <a href="{% url 'news' %}" class="w3-bar-item w3-button w3-padding-large">Новости</a>
+	    <a href="{% url 'contacts' %}" class="w3-bar-item w3-button w3-padding-large">Контакты</a>   
+	    <a href="{% url 'about' %}" class="w3-bar-item w3-button w3-padding-large">О компании</a>
 	  </div>
 	</div>
 

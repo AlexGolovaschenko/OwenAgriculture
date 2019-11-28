@@ -1,0 +1,10 @@
+
+/* override color scheme */
+
+.w3-teal, .w3-hover-teal:hover {
+	color: #fff !important; 
+	background-color: rgb(0, 143, 134) !important; }
+
+.w3-dark-teal, .w3-hover-dark-teal:hover {
+	color: #fff !important; 
+	background-color: rgb(27, 107, 101) !important; }

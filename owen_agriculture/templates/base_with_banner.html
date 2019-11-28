@@ -1,8 +1,28 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block banner %} 
-	<div class="w3-display-container w3-teal" >
-		<h1 class="w3-container">banner</h1> 
+	<!-- Automatic Slideshow Images -->
+	<div class="mySlides w3-display-container w3-center w3-teal" >
+	  <img src="{% static 'img/bg_1.png' %}" style="width:100%;">
+	  <div class="w3-display-bottommiddle w3-container w3-text-black w3-padding-32 w3-hide-small">
+	    <h1 style="font-size:4vw">Лучьшие технологии</h1>
+	    <h5 style="font-size:1.5vw">Компания ОВЕН разработала самые лучьшие в мире блоки для управления микроклиматом.</h5>   
+	  </div>
+	</div>
+	<div class="mySlides w3-display-container w3-center w3-teal" >
+	  <img src="{% static 'img/bg_2.png' %}" style="width:100%;">
+	  <div class="w3-display-bottommiddle w3-container w3-text-black w3-padding-32 w3-hide-small">
+	    <h1 style="font-size:4vw">Микроклимат для ваших курей</h1>
+	    <h5 style="font-size:1.5vw">Современные технологии содержания курей позволяют добиться невероятного прироста веса птицы.</h5>    
+	  </div>
+	</div>
+	<div class="mySlides w3-display-container w3-center w3-teal" >
+	  <img src="{% static 'img/bg_3.png' %}" style="width:100%;">
+	  <div class="w3-display-bottommiddle w3-container w3-text-black w3-padding-32 w3-hide-small">
+	    <h1 style="font-size:4vw">Комплексные поставки</h1>
+	    <h5 style="font-size:1.5vw">Комплексные поставки периферии. Компания предлагает вентиляторы, клапаны, и т.д. </h5>    
+	  </div>
 	</div>
 {% endblock %}
 

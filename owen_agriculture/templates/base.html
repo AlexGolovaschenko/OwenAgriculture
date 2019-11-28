@@ -4,7 +4,7 @@
 <html lang="ru-RU">
 
 <head>
-	<title>Owen Agriculture</title>
+	<title>{% block title %} Owen Agriculture {% endblock %}</title>
 	<link rel="shortcut icon" type="image/png" href="{% static 'img/owen.ico' %}" />
 	<meta charset="UTF-8">
 
@@ -72,17 +72,61 @@
 	</div>
 
 
+	<!-- Footer -->
+	<div class="w3-container w3-teal" style="padding-top:20px; min-height: 210px" >
+		<div class="w3-content w3-row" style="max-width:1400px;"> 
+			<div class="w3-container w3-third" >
+				<h4>КОНТАКТЫ</h4>
+			    <div class=" w3-margin-bottom">
+			        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> 1-я ул. Энтузиастов, д. 15, стр. 1<br>
+			        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Тел.: +7 (495) 64-111-56<br>
+			        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> E-mail: sales@owen.ru<br>
+			    </div>			
+			</div>
+			<div class="w3-container w3-third w3-center" >
+				<h4>ОВЕН В СОЦИАЛЬНЫХ СЕТЯХ</h4>
+				<div class="w3-xlarge w3-section">
+				    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+				    <i class="fa fa-instagram w3-hover-opacity"></i>
+				    <i class="fa fa-snapchat w3-hover-opacity"></i>
+				    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+				    <i class="fa fa-twitter w3-hover-opacity"></i>
+				    <i class="fa fa-linkedin w3-hover-opacity"></i>
+				</div>				
+			</div>
+			<div class="w3-container w3-third w3-center" >
+				<h4>###</h4>
+			</div>	
+		</div>			
+	</div>
+
 
 	<script>
-	// Used to toggle the menu on small screens when clicking on the menu button
-	function myFunction() {
-	  var x = document.getElementById("navDemo");
-	  if (x.className.indexOf("w3-show") == -1) {
-	    x.className += " w3-show";
-	  } else { 
-	    x.className = x.className.replace(" w3-show", "");
-	  }
-	}
+		// Automatic Slideshow - change image every 4 seconds
+		var myIndex = 0;
+		carousel();
+
+		function carousel() {
+		  var i;
+		  var x = document.getElementsByClassName("mySlides");
+		  for (i = 0; i < x.length; i++) {
+		    x[i].style.display = "none";  
+		  }
+		  myIndex++;
+		  if (myIndex > x.length) {myIndex = 1}    
+		  x[myIndex-1].style.display = "block";  
+		  setTimeout(carousel, 4000);    
+		}
+			
+		// Used to toggle the menu on small screens when clicking on the menu button
+		function myFunction() {
+		  var x = document.getElementById("navDemo");
+		  if (x.className.indexOf("w3-show") == -1) {
+		    x.className += " w3-show";
+		  } else { 
+		    x.className = x.className.replace(" w3-show", "");
+		  }
+		}
 	</script>
 </body>
 </html>

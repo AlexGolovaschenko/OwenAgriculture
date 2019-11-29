@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Owen Agriculture - Птицеводство {% endblock %}
+
+{% block content %} 
+<div class="w3-content" style="max-width:1140px;"> 
+
+	{% if topics %}
+		{% for topic in topics %}
+			<h2 class="w3-border-bottom">{{topic.headline}}</h2>
+
+			<div class="w3-row-padding w3-stretch">
+			{% for key, val in items.items %}
+				{% if key == topic.headline  %}
+					{% if val %}
+						{% for item in val %}
+							<div class="w3-quarter">
+								<div class="w3-card-2 w3-container w3-margin-bottom" style="height: 120px;">
+									<p>{{item.name}}</p>
+								</div>
+							</div>								
+							<div class="w3-quarter">
+								<div class="w3-card-2 w3-container w3-margin-bottom" style="height: 120px;">
+									<p>ТЕСТ: {{item.name}}</p>
+								</div>
+							</div>								
+							<div class="w3-quarter">
+								<div class="w3-card-2 w3-container w3-margin-bottom" style="height: 120px;">
+									<p>ТЕСТ: {{item.name}}</p>
+								</div>
+							</div>								
+							<div class="w3-quarter">
+								<div class="w3-card-2 w3-container w3-margin-bottom" style="height: 120px;">
+									<p>ТЕСТ: {{item.name}}</p>
+								</div>
+							</div>
+							<div class="w3-quarter">
+								<div class="w3-card-2 w3-container w3-margin-bottom" style="height: 120px;">
+									<p>ТЕСТ: {{item.name}}</p>
+								</div>
+							</div>
+						{% endfor %}
+					{% else %}
+							<div class="w3-quarter">
+								<div class="w3-card-2 w3-container w3-margin-bottom w3-pale-red" style="height: 60px;">
+									<p>Продукты не найдены</p>
+								</div>
+							</div>
+					{% endif %}
+				{% endif %}
+			{% endfor %}
+			</div>
+
+		{% endfor %}
+	{% else %}
+		<br>
+		<p class="w3-panel  w3-card-2 w3-pale-red" style="height: 60px;">Каталог не доступен</p>
+	{% endif %}
+
+</div>
+<br>
+{% endblock %}

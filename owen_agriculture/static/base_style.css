@@ -8,3 +8,11 @@
 .w3-dark-teal, .w3-hover-dark-teal:hover {
 	color: #fff !important; 
 	background-color: rgb(27, 107, 101) !important; }
+
+
+/* my style */
+.background-opacity-teal, .hover-background-opacity-teal:hover {
+	color: #fff !important; 
+	background-color: rgba(0, 143, 134, 0.45) !important; }
+}
+

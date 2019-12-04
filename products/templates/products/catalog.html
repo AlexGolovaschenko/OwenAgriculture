@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 
 {% block title %} Owen Agriculture - Птицеводство {% endblock %}
@@ -15,31 +16,58 @@
 				{% if key == topic.headline  %}
 					{% if val %}
 						{% for item in val %}
-							<div class="w3-quarter">
-								<div class="w3-card-2 w3-container w3-margin-bottom" style="height: 120px;">
-									<p>{{item.name}}</p>
-								</div>
-							</div>								
-							<div class="w3-quarter">
-								<div class="w3-card-2 w3-container w3-margin-bottom" style="height: 120px;">
-									<p>ТЕСТ: {{item.name}}</p>
-								</div>
-							</div>								
-							<div class="w3-quarter">
-								<div class="w3-card-2 w3-container w3-margin-bottom" style="height: 120px;">
-									<p>ТЕСТ: {{item.name}}</p>
-								</div>
-							</div>								
-							<div class="w3-quarter">
-								<div class="w3-card-2 w3-container w3-margin-bottom" style="height: 120px;">
-									<p>ТЕСТ: {{item.name}}</p>
-								</div>
+							<div class="w3-quarter w3-margin-bottom">
+								<a href="{% url 'products:product_detail' %}" style="text-decoration: none;">
+									<div class="w3-card-2 w3-container w3-hover-teal">
+										<div class="w3-margin-top w3-white w3-hower-white w3-border" style="height: 200px; overflow: hidden;">
+											<img src="{% static 'img/test_fan.jpg' %}" style="width: 100%;">
+										</div>
+										<h5 class="w3-margin-bottom">{{item.name}}</h5>
+									</div>
+								</a>
 							</div>
-							<div class="w3-quarter">
-								<div class="w3-card-2 w3-container w3-margin-bottom" style="height: 120px;">
-									<p>ТЕСТ: {{item.name}}</p>
-								</div>
+							
+							<div class="w3-quarter w3-margin-bottom">
+								<a href="{% url 'products:product_detail' %}" style="text-decoration: none;">
+									<div class="w3-card-2 w3-container w3-hover-teal">
+										<div class="w3-margin-top w3-white w3-hower-white w3-border" style="height: 200px; overflow: hidden;">
+											<img src="{% static 'img/test_fan.jpg' %}" style="width: 100%;">
+										</div>
+										<h5 class="w3-margin-bottom">{{item.name}}</h5>
+									</div>
+								</a>
 							</div>
+							<div class="w3-quarter w3-margin-bottom">
+								<a href="{% url 'products:product_detail' %}" style="text-decoration: none;">
+									<div class="w3-card-2 w3-container w3-hover-teal">
+										<div class="w3-margin-top w3-white w3-hower-white w3-border" style="height: 200px; overflow: hidden;">
+											<img src="{% static 'img/test_fan.jpg' %}" style="width: 100%;">
+										</div>
+										<h5 class="w3-margin-bottom">{{item.name}}</h5>
+									</div>
+								</a>
+							</div>
+							<div class="w3-quarter w3-margin-bottom">
+								<a href="{% url 'products:product_detail' %}" style="text-decoration: none;">
+									<div class="w3-card-2 w3-container w3-hover-teal">
+										<div class="w3-margin-top w3-white w3-hower-white w3-border" style="height: 200px; overflow: hidden;">
+											<img src="{% static 'img/test_fan.jpg' %}" style="width: 100%;">
+										</div>
+										<h5 class="w3-margin-bottom">{{item.name}}</h5>
+									</div>
+								</a>
+							</div>
+							<div class="w3-quarter w3-margin-bottom">
+								<a href="{% url 'products:product_detail' %}" style="text-decoration: none;">
+									<div class="w3-card-2 w3-container w3-hover-teal">
+										<div class="w3-margin-top w3-white w3-hower-white w3-border" style="height: 200px; overflow: hidden;">
+											<img src="{% static 'img/test_fan.jpg' %}" style="width: 100%;">
+										</div>
+										<h5 class="w3-margin-bottom">{{item.name}}</h5>
+									</div>
+								</a>
+							</div>
+
 						{% endfor %}
 					{% else %}
 							<div class="w3-quarter">

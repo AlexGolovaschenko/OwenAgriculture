@@ -16,8 +16,12 @@ class ProductTopic (models.Model):
 
 class Product (models.Model):
 	topic = models.ForeignKey(ProductTopic, verbose_name='Категория продукта', on_delete=models.CASCADE)
-	name = models.CharField(verbose_name='Наименование', max_length=200)
-	description = models.TextField(verbose_name='Описание')
+	name = models.CharField(verbose_name='Наименование', max_length=100, default='')
+	image = models.ImageField(default='product_default.jpg', upload_to='product_pictures')
+	short_description = models.CharField(verbose_name='Краткое описание', max_length=200, default='')
+	description = models.TextField(verbose_name='Полное описание', default='')
+	used_in_poultry = models.BooleanField(verbose_name='Используется в птицекомплексах', default=False)
+	used_in_pigsty = models.BooleanField(verbose_name='Используется в свинокомплексах', default=False)
 
 	def __str__ (self):
 		return self.name

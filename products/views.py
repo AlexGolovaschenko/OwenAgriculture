@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import Http404
 from products.models import ProductTopic, Product
 
 def poultry_catalog(request):
@@ -16,5 +17,11 @@ def pigsty_catalog(request):
 	return render(request, 'products/catalog.html')
 
 
-def product_detail(request):
-	return render(request, 'products/product_detail.html')
+def product_detail(request, id):
+	try:
+		product = Product.objects.get(id = id)
+	except:
+		raise Http404("Продукт не найден")	
+	
+	context = {'product' : product}
+	return render(request, 'products/product_detail.html', context)

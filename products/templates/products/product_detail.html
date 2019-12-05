@@ -1,1 +1,18 @@
-PRODUCT DETAIL
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="w3-content" style="max-width:1140px;"> 
+		<h2 class="w3-border-bottom">{{product.name}}</h2>
+
+		<div class="w3-row">
+			<div class="w3-display-container w3-quarter w3-card-2" style="height: 300px;">
+				<img src="{{product.image.url}}" alt="{{product.name}}" class="w3-display-middle" style="max-width: 90%; max-height: 90%">
+			</div>
+
+			<div class="w3-container w3-rest">
+				<p>{{product.description}}</p>
+			</div>
+		</div>
+	</div>
+	<br>
+{% endblock %}

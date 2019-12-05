@@ -17,13 +17,13 @@
 					{% if val %}
 						{% for item in val %}
 							<div class="w3-quarter w3-margin-bottom">
-								<a href="{% url 'products:product_detail' %}" style="text-decoration: none;">
+								<a href="{% url 'products:product_detail' item.id %}" style="text-decoration: none;">
 									<div class="w3-card-2 w3-container w3-hover-teal">
 										<div class="w3-display-container w3-margin-top w3-white w3-hower-white w3-border my-border-light-grey" style="height: 200px;">
 											<img src="{{item.image.url}}" alt="{{item.name}}" class="w3-display-middle" style="max-width: 90%; max-height: 90%">
 										</div>
 										<h5>{{item.name}}</h5>
-										<p class="w3-text-dark-grey w3-small">{{item.short_description}}</p>
+										<p class="w3-small">{{item.short_description}}</p>
 									</div>
 								</a>
 							</div>

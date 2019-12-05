@@ -2,19 +2,46 @@ from django.shortcuts import render
 from django.http import Http404
 from products.models import ProductTopic, Product
 
+# industry names
+PIGSTY = 'pigsty'
+POULTRY = 'poultry'
+
+
 def poultry_catalog(request):
-	topics = ProductTopic.objects.order_by('order')
-	items = {}
-	for topic in topics:
-		items[topic.headline] = topic.product_set.order_by('name')[:16] 
-
-	context = {'topics': topics, 'items': items}
-
+	context = _catalog_context_filter(POULTRY)
 	return render(request, 'products/catalog.html', context)
 
 
 def pigsty_catalog(request):
-	return render(request, 'products/catalog.html')
+	context = _catalog_context_filter(PIGSTY)
+	return render(request, 'products/catalog.html', context)
+
+
+def _catalog_context_filter(used_in):
+	''' 
+	Make a page context dictionary filtered by industry
+	Returns a context dictionary including a list of topics and a dictionary with them items
+	'''
+
+	# get all topics
+	all_topics = ProductTopic.objects.order_by('order')
+
+	# get all items in topics with filter by industry
+	items = {}
+	for topic in all_topics:
+		if used_in == PIGSTY:
+			items[topic.headline] = topic.product_set.filter(used_in_pigsty = True)
+		elif used_in == POULTRY:
+			items[topic.headline] = topic.product_set.filter(used_in_poultry = True)
+
+	# remove all empty topics
+	topics = []
+	for t in all_topics:
+		if items[t.headline] :
+			topics.append(t)
+
+	# return page context
+	return {'topics': topics, 'items': items}
 
 
 def product_detail(request, id):

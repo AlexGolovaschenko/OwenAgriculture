@@ -21,10 +21,10 @@
 }
 
 
-@media (min-width:1500px) { .h0 {display:none !important;} }
-@media (max-width:1500px) { .h1 {display:none !important;} }
-@media (max-width:1400px) { .h2 {display:none !important;} }
-@media (max-width:1200px) { .h3 {display:none !important;} }
+@media (min-width:1450px) { .h0 {display:none !important;} }
+@media (max-width:1450px) { .h1 {display:none !important;} }
+@media (max-width:1300px) { .h2 {display:none !important;} }
+@media (max-width:1150px) { .h3 {display:none !important;} }
 @media (max-width:1000px) { .h4 {display:none !important;} }
 @media (max-width:850px)  { .h5 {display:none !important;} }
 

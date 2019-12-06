@@ -21,11 +21,11 @@
 }
 
 
-@media (min-width:1450px) { .h0 {display:none !important;} }
-@media (max-width:1450px) { .h1 {display:none !important;} }
-@media (max-width:1300px) { .h2 {display:none !important;} }
-@media (max-width:1150px) { .h3 {display:none !important;} }
-@media (max-width:1000px) { .h4 {display:none !important;} }
-@media (max-width:850px)  { .h5 {display:none !important;} }
+@media (min-width:1450px) { .hide-0 {display:none !important;} }
+@media (max-width:1450px) { .hide-1 {display:none !important;} }
+@media (max-width:1300px) { .hide-2 {display:none !important;} }
+@media (max-width:1150px) { .hide-3 {display:none !important;} }
+@media (max-width:1000px) { .hide-4 {display:none !important;} }
+@media (max-width:850px)  { .hide-5 {display:none !important;} }
 
 

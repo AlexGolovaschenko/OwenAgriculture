@@ -19,3 +19,13 @@
 .my-border-light-grey {
 	border-color: rgb(230, 230, 230) !important;
 }
+
+
+@media (min-width:1500px) { .h0 {display:none !important;} }
+@media (max-width:1500px) { .h1 {display:none !important;} }
+@media (max-width:1400px) { .h2 {display:none !important;} }
+@media (max-width:1200px) { .h3 {display:none !important;} }
+@media (max-width:1000px) { .h4 {display:none !important;} }
+@media (max-width:850px)  { .h5 {display:none !important;} }
+
+

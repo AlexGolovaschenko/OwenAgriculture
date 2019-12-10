@@ -29,3 +29,16 @@ class Product (models.Model):
 	class Meta():
 		verbose_name = "Продукт"
 		verbose_name_plural = "Продукты"
+
+
+class TopicsGroup (models.Model):
+	hedline = models.CharField(verbose_name='Название', max_length=200)
+	order = models.PositiveSmallIntegerField(verbose_name='Порядок отображения', default=0)
+	topics = models.ManyToManyField(ProductTopic, verbose_name='Категории продуктов')
+
+	def __str__ (self):
+		return self.hedline
+
+	class Meta():
+		verbose_name = "Группа"
+		verbose_name_plural = "Группы"

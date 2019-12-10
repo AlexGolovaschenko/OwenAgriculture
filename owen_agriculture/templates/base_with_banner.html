@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block banner %} 
+<div class="w3-display-container" style="height: 400px;">
 	<!-- Automatic Slideshow Images -->
 	<div class="mySlides w3-display-container w3-center w3-teal" style="max-height: 400px; overflow: hidden;">
 	  <img src="{% static 'img/bg_1.png' %}" style="width:100%;">
@@ -24,5 +25,46 @@
 	    <p style="font-size:1.5vw">Комплексные поставки периферии. Компания предлагает вентиляторы, клапаны, и т.д. </p>    
 	  </div>
 	</div>
+
+	<button class="w3-button w3-display-left w3-text-white w3-jumbo background-opacity-teal hover-background-opacity-teal" style="height: 60%" onclick="plusDivs(-1)">&#10094;</button>
+	<button class="w3-button w3-display-right w3-text-white w3-jumbo background-opacity-teal hover-background-opacity-teal" style="height: 60%" onclick="plusDivs(+1)">&#10095;</button>
+</div>
+
 {% endblock %}
 
+{% block banner_script %}
+	<script type="text/javascript">
+		var TIMEOUT = 7000; // period for automation chande image
+
+		var slideIndex = 0;
+		showDivs(slideIndex);
+		carousel();
+		var carousel_thread;
+		
+		// manual chande image - by buttons
+		function plusDivs(n) {
+		  showDivs(slideIndex += n);
+		  // reset automation change timout
+		  clearTimeout(carousel_thread);
+ 		  carousel_thread = setTimeout(carousel, TIMEOUT);
+		}
+
+		// automation chande image
+		function carousel() {
+		  showDivs(slideIndex += 1);
+		  carousel_thread = setTimeout(carousel, TIMEOUT);    
+		}
+
+		// image control
+		function showDivs(n) {
+		  var i;
+		  var x = document.getElementsByClassName("mySlides");
+		  if (n > x.length) {slideIndex = 1}
+		  if (n < 1) {slideIndex = x.length} ;
+		  for (i = 0; i < x.length; i++) {
+		    x[i].style.display = "none";
+		  }
+		  x[slideIndex-1].style.display = "block";
+		}
+	</script>
+{% endblock %}

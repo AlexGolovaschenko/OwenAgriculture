@@ -31,8 +31,10 @@ def _catalog_context_filter(used_in):
 	for topic in all_topics:
 		if used_in == PIGSTY:
 			items[topic.headline] = topic.product_set.filter(used_in_pigsty = True)
+			title = 'Свиноводство'
 		elif used_in == POULTRY:
 			items[topic.headline] = topic.product_set.filter(used_in_poultry = True)
+			title = 'Птицеводство'
 
 	# remove all empty topics
 	topics = []
@@ -41,7 +43,7 @@ def _catalog_context_filter(used_in):
 			topics.append(t)
 
 	# return page context
-	return {'topics': topics, 'items': items}
+	return {'topics': topics, 'items': items, 'title': title}
 
 
 def product_detail(request, id):

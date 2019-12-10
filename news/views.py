@@ -14,6 +14,6 @@ def news_list(request):
 
 
 def news_detail(request, id):
-	art = get_object_or_404(Project, pk = id)
+	art = get_object_or_404(Article, pk = id)
 	context = {'article': art}
-	return render(reques, 'news/news_detail.html', context)
+	return render(request, 'news/news_detail.html', context)

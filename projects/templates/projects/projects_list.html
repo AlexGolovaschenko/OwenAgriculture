@@ -4,5 +4,29 @@
 {% block title %} Owen Agriculture - Проекты {% endblock %}
 
 {% block content %} 
-	<h1>projects</h1> 
+	{% if projects_list %}
+		{% for project in projects_list %}
+		<a href="{% url 'projects:project_detail' project.id %}" style="text-decoration: none;" >
+			<div class="w3-panel  w3-card-2 w3-padding w3-bottombar w3-topbar w3-border-white w3-hover-border-blue">	
+				<div clss="w3-row ">
+					{% if project.image %}
+						<div class="w3-quarter" style="">
+							<div class="w3-display-container w3-white " style="height: 200px;">
+								<img src="{{project.image.url}}" alt="{{project.header}}" class="w3-display-middle" style="max-width: 90%; max-height: 90%">
+							</div>
+						</div>
+					{% endif %}
+					<div class="w3-rest">
+						<h2 class="w3-xlarge">{{project.header}}</h2>
+						<p class="w3-medium">{{project.short_description}}</p>
+					</div>
+				</div>
+			</div>
+		</a>
+		{% endfor %}
+	{% else %}
+		<br>
+		<p class="w3-panel  w3-card-2 w3-pale-red" style="height: 60px;">Проекты не найдены</p>
+	{% endif %}
+	
 {% endblock %}

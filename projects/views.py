@@ -16,4 +16,4 @@ def projects_list(request):
 def project_detail(request, id):
 	pr = get_object_or_404(ProjectArticle, pk = id)
 	context = {'project': pr}
-	return render(reques, 'projects/project_detail.html', context)
+	return render(request, 'projects/project_detail.html', context)

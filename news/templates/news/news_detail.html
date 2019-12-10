@@ -4,5 +4,20 @@
 {% block title %} Owen Agriculture - Новости {% endblock %}
 
 {% block content %} 
-	<h1>news</h1> 
+	<div class="w3-container "> 
+		<h2 class="w3-center w3-border-bottom">{{article.header}}</h2>
+		<div class="w3-row">
+
+			{% if article.image %}
+				<div class="w3-display-container w3-third w3-card-2 w3-margin-right" style="height: 400px;">
+					<img src="{{article.image.url}}" alt="{{article.header}}" class="w3-display-middle" style="max-width: 90%; max-height: 90%">
+				</div>
+			{% endif %}
+
+			<div class="w3-rest">
+				<p class="w3-large">{{article.text}}</p>
+			</div>
+		</div>
+	</div>
+	<br>
 {% endblock %}

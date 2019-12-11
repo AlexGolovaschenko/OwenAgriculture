@@ -20,6 +20,27 @@
 	border-color: rgb(230, 230, 230) !important;
 }
 
+.text-dark-teal{
+	color: rgb(27, 107, 101) !important;
+}
+
+
+.animate .animate-left, .animate-right {
+	display: none !important;
+	transition: 250ms all;
+}
+
+.animate:hover .animate-left {
+	animation:animateleft 0.3s;
+	display: block !important;
+} @keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}}
+
+.animate:hover .animate-right {
+	animation:animateright 0.3s;
+	display: block !important;
+} @keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
+
+
 
 @media (min-width:1450px) { .hide-0 {display:none !important;} }
 @media (max-width:1450px) { .hide-1 {display:none !important;} }

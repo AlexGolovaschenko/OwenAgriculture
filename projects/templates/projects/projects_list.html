@@ -3,7 +3,8 @@
 
 {% block title %} Owen Agriculture - Проекты {% endblock %}
 
-{% block content %} 
+{% block content %}
+	<h2>Наши проекты</h2> 
 	{% if projects_list %}
 		{% for project in projects_list %}
 		<a href="{% url 'projects:project_detail' project.id %}" style="text-decoration: none;" >

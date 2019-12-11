@@ -34,7 +34,6 @@ class Product (models.Model):
 	model = models.CharField(verbose_name='Модель', max_length=50, blank=False)
 	image = models.ImageField(default='product_default.png', upload_to='product_pictures')
 	short_description = models.CharField(verbose_name='Краткое описание', max_length=200, default='')
-	description = models.TextField(verbose_name='Описание', default='')
 	used_in_poultry = models.BooleanField(verbose_name='Используется в птицекомплексах', default=False)
 	used_in_pigsty = models.BooleanField(verbose_name='Используется в свинокомплексах', default=False)
 
@@ -52,6 +51,7 @@ class ProductSpecification (models.Model):
 	        on_delete=models.CASCADE,
 	        primary_key=True,
 	    )
+	description = models.TextField(verbose_name='Описание', blank=True)
 	specifications = models.TextField(verbose_name='Технические характеристики', blank=True) # should be table
 	func_scheme = models.ImageField(verbose_name='Функциональная схема', upload_to='product_schemes', blank=True)
 	сontrols_description = models.TextField(verbose_name='Элементы управления', blank=True)

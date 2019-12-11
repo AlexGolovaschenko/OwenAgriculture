@@ -41,6 +41,12 @@
 } @keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
 
 
+.anchor {
+    display: block;
+    position: relative;
+    top: -75px;
+    visibility: hidden;
+}
 
 @media (min-width:1450px) { .hide-0 {display:none !important;} }
 @media (max-width:1450px) { .hide-1 {display:none !important;} }

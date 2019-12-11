@@ -2,15 +2,133 @@
 
 {% block content %}
 	<div class="w3-container"> 
-		<h2 class="w3-border-bottom">{{product.name}}</h2>
-
 		<div class="w3-row">
-			<div class="w3-display-container w3-quarter w3-card-2" style="height: 300px;">
-				<img src="{{product.image.url}}" alt="{{product.name}}" class="w3-display-middle" style="max-width: 90%; max-height: 90%">
-			</div>
+			<!-- side bar -->
+			<div class="w3-container w3-light-grey w3-sidebar w3-bar-block" style="width:300px; height: 650px; margin-top:15px;">
+				<div class="w3-display-container w3-section" style="height: 200px;">
+					<img src="{{product.image.url}}" alt="{{product.name}}" class="w3-display-middle" style="max-width: 100%; max-height: 100%">
+				</div>
+				<h4 class="w3-center w3-xlarge">{{product.model}}</h4>
 
-			<div class="w3-container w3-rest">
-				<p>{{product.description}}</p>
+				<a href="#description" class="w3-bar-item w3-button w3-border-bottom w3-light-grey w3-hover-teal">Краткое описание</a>
+				<a href="#specifications" class="w3-bar-item w3-button w3-border-bottom w3-light-grey w3-hover-teal">Технические характеристики</a>
+				<a href="#func_scheme" class="w3-bar-item w3-button w3-border-bottom w3-light-grey w3-hover-teal">Функциональная схема</a>
+				<a href="#сontrols_description" class="w3-bar-item w3-button w3-border-bottom w3-light-grey w3-hover-teal">Элементы управления</a>
+				<a href="#dimensions" class="w3-bar-item w3-button w3-border-bottom w3-light-grey w3-hover-teal">Габаритные размеры</a>
+				<a href="#connection_scheme" class="w3-bar-item w3-button w3-border-bottom w3-light-grey w3-hover-teal">Cхемы подключения</a>
+				<a href="#documentation" class="w3-bar-item w3-button w3-border-bottom w3-light-grey w3-hover-teal">Документация</a>
+				<a href="#package_bundle" class="w3-bar-item w3-button w3-border-bottom w3-light-grey w3-hover-teal">Комплектация</a>
+				<a href="#leave_question" class="w3-bar-item w3-button w3-border-bottom w3-light-grey w3-hover-teal">Задать вопрос специалисту</a>
+			</div>				
+		
+
+			<!-- product description -->
+			<div class="" style="margin-left:315px">
+				<div id="description" class="anchor"></div>
+				<h2 class="w3-border-bottom">{{product.name}}</h2>
+
+				<div class="w3-display-container" style="height: 300px;">
+					<img src="{{product.image.url}}" alt="{{product.name}}" class="w3-display-middle" style="max-width: 90%; max-height: 90%">
+				</div>
+
+				<div class="w3-panel w3-light-grey w3-large w3-padding">Краткое описание</div>
+				<div class="w3-margin-left">
+					{% if spec.description %}
+						<p class="w3-large">{{spec.description}}</p>
+					{% else %}
+						<p class="w3-large">Описание приведено в документации</p>
+					{% endif %}
+				</div>
+			
+
+				<div id="specifications" class="anchor"></div>
+				<div class="w3-panel w3-light-grey w3-large w3-padding">Технические характеристики</div>
+				<div class="w3-margin-left">
+					{% if spec.description %}
+						<p class="w3-large">{{spec.description}}</p>
+					{% else %}
+						<p class="w3-large">Описание приведено в документации</p>
+					{% endif %}
+				</div>
+				
+
+				<div id="func_scheme" class="anchor"></div>
+				<div class="w3-panel w3-light-grey w3-large w3-padding">Функциональная схема</div>
+				<div class="w3-margin-left">
+					{% if spec.description %}
+						<p class="w3-large">{{spec.description}}</p>
+					{% else %}
+						<p class="w3-large">Описание приведено в документации</p>
+					{% endif %}
+				</div>
+				
+
+				<div id="сontrols_description" class="anchor"></div>
+				<div class="w3-panel w3-light-grey w3-large w3-padding">Элементы управления</div>
+				<div class="w3-margin-left">
+					{% if spec.description %}
+						<p class="w3-large">{{spec.description}}</p>
+					{% else %}
+						<p class="w3-large">Описание приведено в документации</p>
+					{% endif %}
+				</div>
+			
+
+				<div id="dimensions" class="anchor"></div>
+				<div class="w3-panel w3-light-grey w3-large w3-padding">Габаритные размеры</div>
+				<div class="w3-margin-left">
+					{% if spec.description %}
+						<p class="w3-large">{{spec.description}}</p>
+					{% else %}
+						<p class="w3-large">Описание приведено в документации</p>
+					{% endif %}
+				</div>
+			
+
+				<div id="connection_scheme" class="anchor"></div>
+				<div class="w3-panel w3-light-grey w3-large w3-padding">Cхемы подключения</div>
+				<div class="w3-margin-left">
+					{% if spec.description %}
+						<p class="w3-large">{{spec.description}}</p>
+					{% else %}
+						<p class="w3-large">Описание приведено в документации</p>
+					{% endif %}
+				</div>
+			
+
+				<div id="documentation" class="anchor"></div>
+				<div class="w3-panel w3-light-grey w3-large w3-padding">Документация</div>
+				<div class="w3-margin-left">
+					{% if spec.description %}
+						<p class="w3-large">{{spec.description}}</p>
+					{% else %}
+						<p class="w3-large">Описание приведено в документации</p>
+					{% endif %}
+				</div>
+				
+
+				<div id="package_bundle" class="anchor"></div>
+				<div class="w3-panel w3-light-grey w3-large w3-padding">Комплектация</div>
+				<div class="w3-margin-left">
+					{% if spec.description %}
+						<p class="w3-large">{{spec.description}}</p>
+					{% else %}
+						<p class="w3-large">Описание приведено в документации</p>
+					{% endif %}
+				</div>
+			
+
+				<div id="leave_question" class="anchor"></div>
+				<div class="w3-panel w3-light-grey w3-large w3-padding">Задать вопрос специалисту</div>
+				<div class="w3-margin-left">
+					{% if spec.description %}
+						<p class="w3-large">{{spec.description}}</p>
+					{% else %}
+						<p class="w3-large">Описание приведено в документации</p>
+					{% endif %}
+				</div>
+				
+			
 			</div>
 		</div>
 	</div>

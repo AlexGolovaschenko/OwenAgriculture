@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import Http404
-from products.models import ProductTopic, Product
+from products.models import ProductTopic, Product, ProductSpecification
 
 # industry names
 PIGSTY = 'pigsty'
@@ -51,6 +51,11 @@ def product_detail(request, id):
 		product = Product.objects.get(id = id)
 	except:
 		raise Http404("Продукт не найден")	
-	
-	context = {'product' : product}
+
+	if hasattr(product, 'productspecification'):
+		spec = product.productspecification
+	else:
+		spec = []
+
+	context = {'product': product, 'spec': spec}
 	return render(request, 'products/product_detail.html', context)

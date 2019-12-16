@@ -4,13 +4,14 @@ from django.http import Http404
 from news.models import Article
 
 
-def news_list(request):
+def news_home(request):
 	try:
-		li = get_list_or_404(Article)
-	except Http404:
+		li = Article.objects.filter().order_by('-id')
+	except:
 		li = []
-	context = {'news_list' : li}
-	return render(request, 'news/news_list.html', context)
+
+	context = {'news_list':li}
+	return render(request, 'news/news_home.html', context)
 
 
 def news_detail(request, id):

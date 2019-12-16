@@ -1,4 +1,6 @@
 from django.db import models
+from PIL import Image
+
 
 class ProjectArticle(models.Model):
 	header = models.CharField(max_length=200, verbose_name='Название')
@@ -12,3 +14,13 @@ class ProjectArticle(models.Model):
 	class Meta():
 		verbose_name = "Проект"
 		verbose_name_plural = "Проекты"
+
+	def save(self):
+		super().save()
+
+		img = Image.open(self.image.path)
+
+		if img.height > 600 or img.width > 600:
+			output_size = (600, 600)
+			img.thumbnail(output_size)
+			img.save(self.image.path)

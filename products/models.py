@@ -1,5 +1,5 @@
 from django.db import models
-
+from PIL import Image
 
 class ProductTopic (models.Model):
 	headline = models.CharField(verbose_name='Название', max_length=200)
@@ -43,6 +43,16 @@ class Product (models.Model):
 	class Meta():
 		verbose_name = "Продукт"
 		verbose_name_plural = "Продукты"
+
+	def save(self):
+		super().save()
+
+		img = Image.open(self.image.path)
+
+		if img.height > 600 or img.width > 600:
+			output_size = (600, 600)
+			img.thumbnail(output_size)
+			img.save(self.image.path)
 
 
 class ProductSpecification (models.Model):

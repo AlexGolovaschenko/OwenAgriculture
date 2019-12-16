@@ -6,10 +6,11 @@ from projects.models import ProjectArticle
 
 def projects_list(request):
 	try:
-		li = get_list_or_404(ProjectArticle)
-	except Http404:
+		li = ProjectArticle.objects.filter().order_by('-id')
+	except:
 		li = []
-	context = {'projects_list' : li}
+
+	context = {'projects_list':li}
 	return render(request, 'projects/projects_list.html', context)
 
 

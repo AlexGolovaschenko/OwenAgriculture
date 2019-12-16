@@ -1,6 +1,5 @@
 
 /* override color scheme */
-
 .w3-teal, .w3-hover-teal:hover {
 	color: #fff !important; 
 	background-color: rgb(0, 143, 134) !important; }
@@ -8,6 +7,7 @@
 .w3-dark-teal, .w3-hover-dark-teal:hover {
 	color: #fff !important; 
 	background-color: rgb(27, 107, 101) !important; }
+
 
 
 /* my style */
@@ -19,9 +19,19 @@
 .my-border-light-grey {
 	border-color: rgb(230, 230, 230) !important;
 }
+.my-light-grey, .my-hover-light-grey:hover{
+	color: #000 !important; 
+	background-color: rgb(249, 249, 249) !important; }
 
+
+.text-teal{
+	color: rgb(0, 143, 134) !important;
+}
 .text-dark-teal{
 	color: rgb(27, 107, 101) !important;
+}
+.text-dark{
+	color: rgb(50, 50, 50) !important;
 }
 
 

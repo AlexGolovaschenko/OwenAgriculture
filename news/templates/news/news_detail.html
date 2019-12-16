@@ -14,8 +14,9 @@
 				</div>
 			{% endif %}
 
-			<div class="w3-rest">
-				<p class="w3-large">{{article.text | linebreaks}}</p>
+			<div class="w3-rest w3-medium">
+				<h2 class="w3-medium" style="margin-top: 0"><b>{{article.short_description}}</b></h2>
+				{{article.text | linebreaks}}
 			</div>
 		</div>
 	</div>

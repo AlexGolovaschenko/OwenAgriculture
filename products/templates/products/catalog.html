@@ -1,5 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    {% breadcrumb "Главная" "/" %}
+	
+	{% if title == 'Свиноводство' %}
+    	{% breadcrumb "Свиноводство" "products:pigsty_catalog" %}
+    {% elif title == 'Птицеводство' %}
+    	{% breadcrumb "Птицеводство" "products:poultry_catalog" %}
+    {% else %}
+    	{% breadcrumb "Каталог" "products:full_catalog" %}
+    {% endif %}
+{% endblock %}
 
 
 {% block title %} Owen Agriculture - {{title}} {% endblock %}

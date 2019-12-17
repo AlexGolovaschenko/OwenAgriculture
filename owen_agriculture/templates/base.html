@@ -1,4 +1,9 @@
 {% load static %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block breadcrumbs %}
+    {% clear_breadcrumbs %}
+{% endblock %}
 
 <!DOCTYPE html>
 <html lang="ru-RU">
@@ -16,8 +21,16 @@
 
 	<!-- W3.CSS style    https://www.w3schools.com/w3css/4/w3.css     https://www.w3schools.com/w3css  -->
 	<link rel="stylesheet" href="{% static 'css/w3.css' %}">
+
+	<!-- Bootstrap 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+-->
 	<!-- my style -->
 	<link rel="stylesheet" href="{% static 'css/base_style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/breadcrumbs.css' %}">
 </head>
 
 <body class="text-dark">
@@ -71,6 +84,9 @@
 	<div style="margin-top:58px;"> 
 		{% block banner %}{% endblock %} 
 	</div>
+
+	<!-- breadcrumbs -->
+	{% render_breadcrumbs %}
 
 	<!-- Content -->
 	<div class="w3-content" style="max-width:1140px; min-height: 300px;">  

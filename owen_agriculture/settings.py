@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'products.apps.ProductsConfig',
     'news.apps.NewsConfig',
     'projects.apps.ProjectsConfig',
+    'django_bootstrap_breadcrumbs',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -135,3 +136,6 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+BREADCRUMBS_TEMPLATE = os.path.join(PROJECT_ROOT, 'templates/breadcrumbs.html') 

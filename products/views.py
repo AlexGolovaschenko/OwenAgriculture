@@ -5,7 +5,7 @@ from products.models import ProductTopic, Product, ProductSpecification
 # industry names
 PIGSTY = 'pigsty'
 POULTRY = 'poultry'
-
+FULL = 'full'
 
 def poultry_catalog(request):
 	context = _catalog_context_filter(POULTRY)
@@ -16,8 +16,11 @@ def pigsty_catalog(request):
 	context = _catalog_context_filter(PIGSTY)
 	return render(request, 'products/catalog.html', context)
 
+def full_catalog(request):
+	context = _catalog_context_filter(FULL)
+	return render(request, 'products/catalog.html', context)
 
-def _catalog_context_filter(used_in):
+def _catalog_context_filter(catalog):
 	''' 
 	Make a page context dictionary filtered by industry
 	Returns a context dictionary including a list of topics and a dictionary with them items
@@ -29,12 +32,15 @@ def _catalog_context_filter(used_in):
 	# get all items in topics with filter by industry
 	items = {}
 	for topic in all_topics:
-		if used_in == PIGSTY:
+		if catalog == PIGSTY:
 			items[topic.headline] = topic.product_set.filter(used_in_pigsty = True)
 			title = 'Свиноводство'
-		elif used_in == POULTRY:
+		elif catalog == POULTRY:
 			items[topic.headline] = topic.product_set.filter(used_in_poultry = True)
 			title = 'Птицеводство'
+		elif catalog == FULL:
+			items[topic.headline] = topic.product_set.filter()
+			title = 'Каталог'		
 
 	# remove all empty topics
 	topics = []

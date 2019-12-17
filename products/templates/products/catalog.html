@@ -6,9 +6,9 @@
     {{ block.super }}
     {% breadcrumb "Главная" "/" %}
 	
-	{% if title == 'Свиноводство' %}
+	{% if catalog == 'pigsty' %}
     	{% breadcrumb "Свиноводство" "products:pigsty_catalog" %}
-    {% elif title == 'Птицеводство' %}
+    {% elif catalog == 'poultry' %}
     	{% breadcrumb "Птицеводство" "products:poultry_catalog" %}
     {% else %}
     	{% breadcrumb "Каталог" "products:full_catalog" %}
@@ -31,7 +31,7 @@
 					{% if val %}
 						{% for item in val %}
 							<div class="w3-col m4 l3 w3-margin-bottom ">
-								<a href="{% url 'products:product_detail' item.id %}" style="text-decoration: none;" >
+								<a href="{% url 'products:product_detail' item.id %}?catalog={{catalog}}" style="text-decoration: none;" >
 									<div class="w3-card-2 w3-container w3-hover-teal">
 										<div class="w3-display-container w3-margin-top w3-white w3-hower-white w3-border my-border-light-grey" style="height: 200px;">
 											<img src="{{item.image.url}}" alt="{{item.name}}" class="w3-display-middle" style="max-width: 90%; max-height: 90%">

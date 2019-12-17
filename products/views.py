@@ -35,12 +35,15 @@ def _catalog_context_filter(catalog):
 		if catalog == PIGSTY:
 			items[topic.headline] = topic.product_set.filter(used_in_pigsty = True)
 			title = 'Свиноводство'
+			cat = 'pigsty'
 		elif catalog == POULTRY:
 			items[topic.headline] = topic.product_set.filter(used_in_poultry = True)
 			title = 'Птицеводство'
+			cat = 'poultry'
 		elif catalog == FULL:
 			items[topic.headline] = topic.product_set.filter()
-			title = 'Каталог'		
+			title = 'Каталог'
+			cat = 'full'		
 
 	# remove all empty topics
 	topics = []
@@ -49,7 +52,7 @@ def _catalog_context_filter(catalog):
 			topics.append(t)
 
 	# return page context
-	return {'topics': topics, 'items': items, 'title': title}
+	return {'topics': topics, 'items': items, 'title': title, 'catalog':cat }
 
 
 def product_detail(request, id):
@@ -63,5 +66,7 @@ def product_detail(request, id):
 	else:
 		spec = []
 
-	context = {'product': product, 'spec': spec}
+	catalog = request.GET.get('catalog', '')	
+
+	context = {'product': product, 'spec': spec, 'catalog':catalog}
 	return render(request, 'products/product_detail.html', context)

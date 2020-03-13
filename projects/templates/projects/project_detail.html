@@ -1,12 +1,13 @@
-{% extends 'base_with_banner.html' %}
+{% extends 'base.html' %}
 
 
 {% block title %} Owen Agriculture - Проекты {% endblock %}
 
 {% block content %} 
+<div class="py-4">
 	<div class="w3-container "> 
-		<h2 class="w3-center w3-border-bottom">{{project.header}}</h2>
-		<div class="w3-row">
+		<h2 class="w3-center w3-border-bottom pb-2">{{project.header}}</h2>
+		<div class="w3-row py-2">
 			{% if project.image %}
 				<div class="w3-display-container w3-third w3-card-2" style="height: 400px;">
 					<img src="{{project.image.url}}" alt="{{project.header}}" class="w3-display-middle" style="max-width: 90%; max-height: 90%">
@@ -20,4 +21,5 @@
 		</div>
 	</div>
 	<br>
+</div>
 {% endblock %}

@@ -25,6 +25,11 @@
 	<!-- W3.CSS style    https://www.w3schools.com/w3css/4/w3.css     https://www.w3schools.com/w3css  -->
 	<link rel="stylesheet" href="{% static 'css/w3.css' %}">
 
+	<!-- Bootstrap  -->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
 	<!-- my style -->
 	<link rel="stylesheet" href="{% static 'css/base_style.css' %}">
 	<link rel="stylesheet" href="{% static 'css/breadcrumbs.css' %}">
@@ -32,50 +37,36 @@
 
 <body class="text-dark">
 	<!-- Navbar -->
-	<div class="w3-top">
-	  <div class="w3-bar w3-teal w3-card w3-left-align w3-large">
-
-		<!-- Navbar on small screens -->
-		<div class="w3-hide-medium w3-hide-large">
-			<!-- logo -->
-		    <div class="w3-bar-item w3-padding" >    
-			    <a href="{% url 'home' %}"><img src="{% static 'img/logo_2.png' %}" style="height:40px;"></a>
+	<div class="fixed-top w3-white">
+	<div class="w3-content p-2" style="max-width:1140px;">
+		<div class="d-flex">
+			<div class="mr-auto">
+				<a class="" href="{% url 'home' %}">
+					<img src="{% static 'img/logo-dark.png' %}" style="height:40px;">
+				</a>
 			</div>
-			<!-- hamburger icon -->
-			<a class="w3-button w3-right w3-padding-large w3-hover-dark-teal w3-xlarge w3-teal" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-		</div>
-
-		<!-- Navbar on middle and large screens -->
-		<div class="w3-hide-small">
-			<!-- logo -->
-		    <div class="w3-bar-item w3-padding" style="width:430px">    
-			    <a href="{% url 'home' %}"><img src="{% static 'img/logo_1.png' %}" style="height:40px;"></a>
+			<div class="d-none d-md-inline-block text-dark px-2">
+				<p class="p-0 m-0">Центральный офис: <b class="text-dark-teal">+7 (495) 64-111-56</b></p>
+				<p class="w3-small p-0 m-0">E-mail: <a class="w3-text-teal" href="mailto:sales@owen.ru">sales@owen.ru</a></p>
 			</div>
-		    <!-- bar items -->
-		    <div class="w3-cell-row w3-hide-small" style="width: calc(100% - 430px)">
-			    <a href="{% url 'products:poultry_catalog' %}" class="hide-5 w3-cell w3-button w3-padding-16 w3-hover-dark-teal" style="">Птицеводство</a>
-			    <a href="{% url 'products:pigsty_catalog' %}" class="hide-5 w3-cell w3-button w3-padding-16 w3-hover-dark-teal" style="">Свиноводство</a>
-			    <a href="{% url 'projects:projects_list' %}" class="hide-4 w3-cell w3-button w3-padding-16 w3-hover-dark-teal" style="">Проекты</a>
-			    <a href="{% url 'news:news_list' %}" class="hide-3 w3-cell w3-button w3-padding-16 w3-hover-dark-teal" style="">Новости</a>
-			    <a href="{% url 'contacts' %}" class="hide-2 w3-cell w3-button w3-padding-16 w3-hover-dark-teal" style="">Контакты</a>    
-			    <a href="{% url 'about' %}" class="hide-1 w3-cell w3-button w3-padding-16 w3-hover-dark-teal" style="">О компании</a>
-
-			   	<!-- hamburger icon -->
-				<a class="hide-0 w3-button w3-right w3-padding-large w3-hover-dark-teal w3-xlarge w3-teal" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-		    </div>
 		</div>
-	  </div>
-
-	  <!-- dropdown menu -->
-	  <div id="navDemo" class="hide-0 w3-bar-block w3-white w3-hide w3-large w3-teal w3-border-top w3-border-bottom">
-	    <a href="{% url 'products:poultry_catalog' %}" class="w3-bar-item w3-button w3-hover-dark-teal w3-padding-large">Птицеводство</a>
-	    <a href="{% url 'products:pigsty_catalog' %}" class="w3-bar-item w3-button w3-hover-dark-teal w3-padding-large">Свиноводство</a>
-	    <a href="{% url 'projects:projects_list' %}" class="w3-bar-item w3-button w3-hover-dark-teal w3-padding-large">Проекты</a>
-	    <a href="{% url 'news:news_list' %}" class="w3-bar-item w3-button w3-hover-dark-teal w3-padding-large">Новости</a>
-	    <a href="{% url 'contacts' %}" class="w3-bar-item w3-button w3-hover-dark-teal w3-padding-large">Контакты</a>
-	    <a href="{% url 'about' %}" class="w3-bar-item w3-button w3-hover-dark-teal w3-padding-large">О компании</a>
-	  </div>
 	</div>
+	</div>
+
+	<nav class="fixed-top w3-teal" style="margin-top: 55px;">
+	<div class="d-md-flex justify-content-center">
+		<div class="d-md-flex flex-md-row justify-content-center w-100 px-2" style="max-width:1140px;">
+			<a class="w3-button w3-large w3-text-light-grey w3-hover-dark-teal w-100 p-1 text-nowrap" style="text-decoration: none; max-width: 100%;" href="{% url 'products:poultry_catalog' %}">Птицеводство</a>
+			<a class="w3-button w3-large w3-text-light-grey w3-hover-dark-teal w-100 p-1 text-nowrap" style="text-decoration: none; max-width: 100%;" href="{% url 'products:pigsty_catalog' %}">Свиноводство</a>
+			<a class="w3-button w3-large w3-text-light-grey w3-hover-dark-teal w-100 p-1 text-nowrap" style="text-decoration: none; max-width: 100%;" href="{% url 'projects:projects_list' %}">Проекты</a>
+			<a class="w3-button w3-large w3-text-light-grey w3-hover-dark-teal w-100 p-1 text-nowrap" style="text-decoration: none; max-width: 100%;" href="{% url 'news:news_list' %}">Новости</a>
+			<a class="w3-button w3-large w3-text-light-grey w3-hover-dark-teal w-100 p-1 text-nowrap" style="text-decoration: none; max-width: 100%;" href="{% url 'contacts' %}">Контакты</a>
+			<a class="w3-button w3-large w3-text-light-grey w3-hover-dark-teal w-100 p-1 text-nowrap" style="text-decoration: none; max-width: 100%;" href="{% url 'about' %}">О компании</a>
+		</div>
+	</div>
+	</nav>
+	<div class="d-md-none" style="height: 203px"></div>
+	<div class="d-none d-md-inline-block" style="height: 26px"></div>
 
 	<!-- Banner -->
 	<div style="margin-top:58px;"> 
@@ -86,7 +77,7 @@
 	{% render_breadcrumbs %}
 
 	<!-- Content -->
-	<div class="w3-content" style="max-width:1140px; min-height: 300px;">  
+	<div class="w3-content" style="max-width:1140px; min-height: 700px;">  
 		{% block content %}
 			<p class="w3-container">base.html</p>
 		{% endblock %} 
@@ -122,7 +113,6 @@
 	</div>
 
 
-	{% block banner_script %} {% endblock %}
 	{% block product_detail_script %} {% endblock %}
 
 	<script>

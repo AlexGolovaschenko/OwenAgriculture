@@ -1,9 +1,10 @@
-{% extends 'base_with_banner.html' %}
+{% extends 'base.html' %}
 
 
 {% block title %} Owen Agriculture - Проекты {% endblock %}
 
 {% block content %}
+<div class="py-4">
 	<h2>Наши проекты</h2> 
 	{% if projects_list %}
 		{% for project in projects_list %}
@@ -33,5 +34,5 @@
 		<br>
 		<p class="w3-panel  w3-card-2 w3-pale-red" style="height: 60px;">Проекты не найдены</p>
 	{% endif %}
-	
+</div>	
 {% endblock %}

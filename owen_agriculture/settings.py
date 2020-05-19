@@ -26,9 +26,10 @@ SECRET_KEY = '8x$@=uux*#s37stwu0z$_70o8-6s4o3&y5ztf+uhe!4j78d8=f'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '10.6.5.124', 
-    'e11a3cfa.ngrok.io', 
-    'localhost'
+    '172.104.230.208', 
+    'localhost',
+    'owen-farming.site',
+    'www.owen-farming.site'
 ]
 
 
@@ -128,7 +129,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(PROJECT_ROOT)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, "static")

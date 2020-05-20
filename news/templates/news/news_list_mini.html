@@ -1,0 +1,36 @@
+{% if news_list %}
+	<div class="row">
+	{% for article in news_list %}
+		<div class="w3-section col-lg-6 p-2 m-0">
+		<div class="w3-panel w3-card-2 m-0 p-2 pl-0">
+		<div class="w3-row">
+			{% if article.image %}
+				<a href="{% url 'news:news_detail' article.id %}" style="text-decoration: none;" >
+					<div class="w3-quarter w3-margin-right w3-margin-bottom" style="width: 180px;">
+						<div class="w3-display-container w3-white" style="height: 150px;">
+							<img src="{{article.image.url}}" alt="{{article.header}}" class="w3-display-middle" style="max-width: 100%; max-height: 100%">
+						</div>
+					</div>
+				</a>
+			{% endif %}
+			<div class="w3-rest w3-mobile">
+				<a href="{% url 'news:news_detail' article.id %}" style="text-decoration: none;" >
+					<h3 class="w3-xlarge text-teal w3-hover-text-blue">{{article.header}}</h3>
+				</a>
+				<p class="w3-medium">{{article.short_description}}</p>
+			</div>
+		</div>
+		</div>
+		</div>
+
+	{% endfor %}
+	</div>
+{% else %}
+	<br>
+	<p class="w3-panel w3-card-2 w3-pale-red" style="height: 60px;">Нвости не найдены</p>
+{% endif %}
+
+
+
+
+

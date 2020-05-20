@@ -44,7 +44,7 @@
   </div>
 
   <h1 class="text-dark ht-3"><b>НОВОСТИ</b></h1>
-  {% include "news/news_list.html" with news_list=latest_news only %}
+  {% include "news/news_list_mini.html" with news_list=latest_news only %}
   <div class="w3-row w3-section w3-center">
     <a class=" w3-xlarge text-dark-teal w3-hover-text-blue" style="text-decoration: none;" href="{% url 'news:news_list' %}">Другие новости</a>
   </div>

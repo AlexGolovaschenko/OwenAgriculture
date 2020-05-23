@@ -1,3 +1,4 @@
+product_detail.html
 {% extends 'base.html' %}
 {% load django_bootstrap_breadcrumbs %}
 
@@ -18,139 +19,56 @@
 
 {% block title %} Owen Agriculture - {{product.model}} {% endblock %}
 
+{% block scrollable %} data-spy="scroll" data-target="#myScrollspy" data-offset="1" {% endblock %}
 {% block content %}
-	<div class="w3-container"> 
-		<div class="w3-row">
-			<!-- side bar -->
-			<nav class="sidebar w3-quarter w3-container w3-card my-light-grey w3-bar-block" style="width:270px; height: 550px; margin-top:15px;">
-				<div class="w3-display-container w3-margin-top" style="height: 200px; margin-bottom: 0px;">
-					<img src="{{product.image.url}}" alt="{{product.name}}" class="w3-display-middle" style="max-width: 100%; max-height: 100%">
-				</div>
-				<h4 class="w3-center w3-large" style="margin: 0;"><b>{{product.model}}</b></h4>
+<div>
+<div class="container-fluid" >
+  <div class="row">
 
-				<a href="#description" class="w3-bar-item w3-button w3-border-bottom my-light-grey w3-hover-teal w3-small" style="padding-left:3px; padding-bottom: 3px; padding-top: 10px">Краткое описание</a>
-				<a href="#specifications" class="w3-bar-item w3-button w3-border-bottom my-light-grey w3-hover-teal w3-small" style="padding-left:3px; padding-bottom: 3px; padding-top: 10px">Технические характеристики</a>
-				<a href="#func_scheme" class="w3-bar-item w3-button w3-border-bottom my-light-grey w3-hover-teal w3-small" style="padding-left:3px; padding-bottom: 3px; padding-top: 10px">Функциональная схема</a>
-				<a href="#сontrols_description" class="w3-bar-item w3-button w3-border-bottom my-light-grey w3-hover-teal w3-small" style="padding-left:3px; padding-bottom: 3px; padding-top: 10px">Элементы управления</a>
-				<a href="#dimensions" class="w3-bar-item w3-button w3-border-bottom my-light-grey w3-hover-teal w3-small" style="padding-left:3px; padding-bottom: 3px; padding-top: 10px">Габаритные размеры</a>
-				<a href="#connection_scheme" class="w3-bar-item w3-button w3-border-bottom my-light-grey w3-hover-teal w3-small" style="padding-left:3px; padding-bottom: 3px; padding-top: 10px">Cхемы подключения</a>
-				<a href="#documentation" class="w3-bar-item w3-button w3-border-bottom my-light-grey w3-hover-teal w3-small" style="padding-left:3px; padding-bottom: 3px; padding-top: 10px">Документация</a>
-				<a href="#package_bundle" class="w3-bar-item w3-button w3-border-bottom my-light-grey w3-hover-teal w3-small" style="padding-left:3px; padding-bottom: 3px; padding-top: 10px">Комплектация</a>
-				<a href="#leave_question" class="w3-bar-item w3-button w3-border-bottom my-light-grey w3-hover-teal w3-small" style="padding-left:3px; padding-bottom: 3px; padding-top: 10px">Задать вопрос специалисту</a>
-			</nav>				
-		
+    <!-- navbar -->
+    <nav class="col-3 my-light-grey sidebar-shadow" id="myScrollspy" style="width:260px;">
+      <nav class="sidebar mt-3" style="width:260px;">
+        <a href="#top" style="text-decoration: none;">
+          <div class="w3-display-container w3-margin-top" style="height: 200px; margin-bottom: 0px;">
+            <img src="{{product.image.url}}" alt="{{product.name}}" class="w3-display-middle" style="max-width: 100%; max-height: 100%">
+          </div>
+          <h4 class="w3-center w3-large text-dark" style="margin: 0;"><b>{{product.model}}</b></h4>
+        </a>
 
-			<!-- product description -->
-			<div class="w3-rest" style="margin-left:285px">
-				<div id="description" class="anchor"></div>
-				<h2 class="w3-border-bottom">{{product.name}}</h2>
+        <ul class="nav nav-pills flex-column pt-2">
+          {% for s in spec %}
+            <li class="nav-item">
+              <a class="nav-link round-0 w3-border-bottom w3-hover-teal w3-small p-1 pt-2" href="#section{{forloop.counter}}">{{s.header}}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </nav>
 
-				<div class="w3-display-container" style="height: 300px;">
-					<img src="{{product.image.url}}" alt="{{product.name}}" class="w3-display-middle" style="max-width: 90%; max-height: 90%">
-				</div>
 
-				<div class="w3-panel w3-light-grey w3-large w3-padding">Краткое описание</div>
-				<div class="w3-margin-left">
-					{% if spec.description %}
-						<p class="w3-large">{{spec.description}}</p>
-					{% else %}
-						<p class="w3-medium">Информация доступна в документации на устройство</p>
-					{% endif %}
-				</div>
-			
+    <!-- product description -->
+    <div class="col-9" >
+      <div id="top" class="anchor" style="top: -130px;"></div>
+      <h2 class="w3-border-bottom">{{product.name}}</h2>
+      <div class="w3-display-container" style="height: 300px;">
+        <img src="{{product.image.url}}" alt="{{product.name}}" class="w3-display-middle" style="max-width: 90%; max-height: 90%">
+      </div>
 
-				<div id="specifications" class="anchor"></div>
-				<div class="w3-panel w3-light-grey w3-large w3-padding">Технические характеристики</div>
-				<div class="w3-margin-left">
-					{% if spec.description %}
-						<p class="w3-large">{{spec.description}}</p>
-					{% else %}
-						<p class="w3-medium">Информация доступна в документации на устройство</p>
-					{% endif %}
-				</div>
-				
+      {% for s in spec %}
+      <div id="section{{forloop.counter}}" class="anchor"></div>
+        <div class="w3-panel w3-light-grey w3-large w3-padding">{{s.header}}</div>
+        <div class="w3-margin-left">
+          <p class="w3-large">{{s.specification|safe}}</p>
+        </div>
+      
+      {% endfor %}
+    </div>
 
-				<div id="func_scheme" class="anchor"></div>
-				<div class="w3-panel w3-light-grey w3-large w3-padding">Функциональная схема</div>
-				<div class="w3-margin-left">
-					{% if spec.description %}
-						<p class="w3-large">{{spec.description}}</p>
-					{% else %}
-						<p class="w3-medium">Информация доступна в документации на устройство</p>
-					{% endif %}
-				</div>
-				
 
-				<div id="сontrols_description" class="anchor"></div>
-				<div class="w3-panel w3-light-grey w3-large w3-padding">Элементы управления</div>
-				<div class="w3-margin-left">
-					{% if spec.description %}
-						<p class="w3-large">{{spec.description}}</p>
-					{% else %}
-						<p class="w3-medium">Информация доступна в документации на устройство</p>
-					{% endif %}
-				</div>
-			
+  </div>
+</div>
+</div>
 
-				<div id="dimensions" class="anchor"></div>
-				<div class="w3-panel w3-light-grey w3-large w3-padding">Габаритные размеры</div>
-				<div class="w3-margin-left">
-					{% if spec.description %}
-						<p class="w3-large">{{spec.description}}</p>
-					{% else %}
-						<p class="w3-medium">Информация доступна в документации на устройство</p>
-					{% endif %}
-				</div>
-			
-
-				<div id="connection_scheme" class="anchor"></div>
-				<div class="w3-panel w3-light-grey w3-large w3-padding">Cхемы подключения</div>
-				<div class="w3-margin-left">
-					{% if spec.description %}
-						<p class="w3-large">{{spec.description}}</p>
-					{% else %}
-						<p class="w3-medium">Информация доступна в документации на устройство</p>
-					{% endif %}
-				</div>
-			
-
-				<div id="documentation" class="anchor"></div>
-				<div class="w3-panel w3-light-grey w3-large w3-padding">Документация</div>
-				<div class="w3-margin-left">
-					{% if spec.description %}
-						<p class="w3-large">{{spec.description}}</p>
-					{% else %}
-						<p class="w3-medium">Информация доступна в документации на устройство</p>
-					{% endif %}
-				</div>
-				
-
-				<div id="package_bundle" class="anchor"></div>
-				<div class="w3-panel w3-light-grey w3-large w3-padding">Комплектация</div>
-				<div class="w3-margin-left">
-					{% if spec.description %}
-						<p class="w3-large">{{spec.description}}</p>
-					{% else %}
-						<p class="w3-medium">Информация доступна в документации на устройство</p>
-					{% endif %}
-				</div>
-			
-
-				<div id="leave_question" class="anchor"></div>
-				<div class="w3-panel w3-light-grey w3-large w3-padding">Задать вопрос специалисту</div>
-				<div class="w3-margin-left">
-					{% if spec.description %}
-						<p class="w3-large">{{spec.description}}</p>
-					{% else %}
-						<p class="w3-medium">Информация доступна в документации на устройство</p>
-					{% endif %}
-				</div>
-				
-			
-			</div>
-		</div>
-	</div>
-	<br>
 {% endblock %}
 
 
@@ -164,7 +82,16 @@
 	        }
 	        else{
 	            $('nav.sidebar').removeClass('stickytop');
-	        }
+	        } 
+
+	        var scrollBottom = $(document).height() - $(window).scrollTop();
+	        var offset = '60px';
+	        var navbarHeight =  $('nav.sidebar').outerHeight();
+          var footerHeight =  $('footer.mainFooter').outerHeight() +50;
+	        if ((scrollBottom-footerHeight) <= navbarHeight) {
+	        	offset = ((scrollBottom-footerHeight) - navbarHeight).toString() + 'px';
+	        } 
+	        $('nav.sidebar').css('top',  offset);
 	    });
 	});
 </script>

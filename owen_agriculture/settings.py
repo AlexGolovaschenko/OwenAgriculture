@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'news.apps.NewsConfig',
     'projects.apps.ProjectsConfig',
     'django_bootstrap_breadcrumbs',
+    'ckeditor',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -1,0 +1,80 @@
+
+/* override color scheme */
+.w3-teal, .w3-hover-teal:hover {
+	color: #fff !important; 
+	background-color: rgb(0, 143, 134) !important; }
+
+.w3-dark-teal, .w3-hover-dark-teal:hover {
+	color: #fff !important; 
+	background-color: rgb(27, 107, 101) !important; }
+
+
+
+/* my style */
+.background-opacity-teal, .hover-background-opacity-teal:hover {
+	color: #fff !important; 
+	background-color: rgba(0, 143, 134, 0.45) !important; 
+}
+
+.my-border-light-grey {
+	border-color: rgb(230, 230, 230) !important;
+}
+.my-light-grey, .my-hover-light-grey:hover{
+	color: #000 !important; 
+	background-color: rgb(249, 249, 249) !important; }
+
+
+.text-teal{
+	color: rgb(0, 143, 134) !important;
+}
+.text-dark-teal{
+	color: rgb(27, 107, 101) !important;
+}
+.text-dark{
+	color: rgb(50, 50, 50) !important;
+}
+
+
+.animate .animate-left, .animate-right {
+	display: none !important;
+	transition: 250ms all;
+}
+
+.animate:hover .animate-left {
+	animation:animateleft 0.3s;
+	display: block !important;
+} @keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}}
+
+.animate:hover .animate-right {
+	animation:animateright 0.3s;
+	display: block !important;
+} @keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
+
+
+.animate-opacity{
+	animation:opac 2s
+}@keyframes opac{from{opacity:0.7} to{opacity:1}}
+
+
+.sidebar {}
+.stickytop {
+	position:fixed !important;
+	top: 60px;
+}
+
+
+.anchor {
+    display: block;
+    position: relative;
+    top: -75px;
+    visibility: hidden;
+}
+
+@media (min-width:1450px) { .hide-0 {display:none !important;} }
+@media (max-width:1450px) { .hide-1 {display:none !important;} }
+@media (max-width:1300px) { .hide-2 {display:none !important;} }
+@media (max-width:1150px) { .hide-3 {display:none !important;} }
+@media (max-width:1000px) { .hide-4 {display:none !important;} }
+@media (max-width:850px)  { .hide-5 {display:none !important;} }
+
+

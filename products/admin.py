@@ -1,10 +1,11 @@
 from django.contrib import admin
 
-from .models import ProductTopic, Product, TopicsGroup, ProductSpecification
+from .models import ProductTopic, Product, TopicsGroup, ProductSpecificationField
 
 
 class ProductSpecificationInline (admin.StackedInline):
-	model = ProductSpecification
+	model = ProductSpecificationField
+	extra = 0
 
 class ProductAdmin (admin.ModelAdmin):
 	list_display = ['name', 'model', 'topic', 'used_in_poultry', 'used_in_pigsty']

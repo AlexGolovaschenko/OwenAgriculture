@@ -154,6 +154,6 @@ BREADCRUMBS_TEMPLATE = os.path.join(PROJECT_ROOT, 'templates/breadcrumbs.html')
 
 # Load local settings
 try:
-    from opsi_wiki.local_settings import *
+    from owen_agriculture.local_settings import *
 except ImportError:
     pass

@@ -34,11 +34,11 @@ def _catalog_context_filter(catalog):
 	items = {}
 	for topic in all_topics:
 		if catalog == PIGSTY:
-			items[topic.headline] = topic.product_set.filter(used_in_pigsty = True)
+			items[topic.headline] = topic.product_set.filter(used_in_pigsty = True).order_by('order')
 			title = 'Свиноводство'
 			cat = 'pigsty'
 		elif catalog == POULTRY:
-			items[topic.headline] = topic.product_set.filter(used_in_poultry = True)
+			items[topic.headline] = topic.product_set.filter(used_in_poultry = True).order_by('order')
 			title = 'Птицеводство'
 			cat = 'poultry'
 		elif catalog == FULL:
@@ -62,7 +62,7 @@ def product_detail(request, id):
 	except:
 		raise Http404("Продукт не найден")	
 
-	spec = product.productspecificationfield_set.filter()
+	spec = product.productspecificationfield_set.all().order_by('order')
 	# print('hello, im here!', spec, file=sys.stderr)
 	catalog = request.GET.get('catalog', '')	
 

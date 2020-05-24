@@ -59,7 +59,7 @@
 .sidebar {}
 .stickytop {
 	position:fixed !important;
-	top: 60px;
+	top: 90px;
 }
 
 .nav-link.active  {

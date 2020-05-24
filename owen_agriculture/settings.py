@@ -26,10 +26,7 @@ SECRET_KEY = '8x$@=uux*#s37stwu0z$_70o8-6s4o3&y5ztf+uhe!4j78d8=f'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '172.104.230.208', 
-    'localhost',
-    'owen-farming.site',
-    'www.owen-farming.site'
+    'localhost'
 ]
 
 
@@ -48,6 +45,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+CKEDITOR_CONFIGS = {
+    'default': {        
+        'toolbar': 'full', 
+        'height': 300,
+        'width': '100%', 
+    }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -141,3 +146,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 BREADCRUMBS_TEMPLATE = os.path.join(PROJECT_ROOT, 'templates/breadcrumbs.html') 
+
+
+
+# Load local settings
+try:
+    from opsi_wiki.local_settings import *
+except ImportError:
+    pass

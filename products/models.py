@@ -35,6 +35,7 @@ class Product (models.Model):
 	model = models.CharField(verbose_name='Модель', max_length=50, blank=False)
 	image = models.ImageField(default='product_default.png', upload_to='product_pictures')
 	short_description = models.TextField(verbose_name='Краткое описание', default='')
+	order = models.PositiveSmallIntegerField(verbose_name='Порядок отображения', default=0)
 	used_in_poultry = models.BooleanField(verbose_name='Используется в птицекомплексах', default=False)
 	used_in_pigsty = models.BooleanField(verbose_name='Используется в свинокомплексах', default=False)
 
@@ -60,6 +61,7 @@ class ProductSpecificationField(models.Model):
 	product = models.ForeignKey(Product, verbose_name='Продукт', on_delete=models.CASCADE)
 	header = models.CharField(verbose_name='Оглавление', blank=False, max_length=50)
 	specification = RichTextField(verbose_name='Описание', blank=False)
+	order = models.PositiveSmallIntegerField(verbose_name='Порядок отображения', default=0)
 
 	def __str__ (self):
 		return 'Описание "%s" для %s' %(self.header, self.product.name)

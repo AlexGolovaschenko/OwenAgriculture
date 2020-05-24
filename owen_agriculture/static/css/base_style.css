@@ -78,6 +78,7 @@
     visibility: hidden;
 }
 
+
 @media (min-width:1450px) { .hide-0 {display:none !important;} }
 @media (max-width:1450px) { .hide-1 {display:none !important;} }
 @media (max-width:1300px) { .hide-2 {display:none !important;} }

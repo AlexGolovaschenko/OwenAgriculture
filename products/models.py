@@ -17,19 +17,6 @@ class ProductTopic (models.Model):
 		verbose_name_plural = "Категории продуктов"
 
 
-class TopicsGroup (models.Model):
-	headline = models.CharField(verbose_name='Название', max_length=200)
-	order = models.PositiveSmallIntegerField(verbose_name='Порядок отображения', default=0)
-	topics = models.ManyToManyField(ProductTopic, verbose_name='Категории продуктов')
-
-	def __str__ (self):
-		return self.headline
-
-	class Meta():
-		verbose_name = "Группа"
-		verbose_name_plural = "Группы"
-
-
 class Product (models.Model):
 	topic = models.ForeignKey(ProductTopic, verbose_name='Категория продукта', on_delete=models.CASCADE)
 	name = models.CharField(verbose_name='Полное наименование', max_length=100, blank=False)

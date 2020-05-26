@@ -25,15 +25,15 @@
 				<h2 class="w3-border-bottom">{{topic.headline}}</h2>
 			</div>
 
-			<div class="w3-row-padding ">
+			<div class="row px-3">
 			{% for key, val in items.items %}
 				{% if key == topic.headline  %}
 					{% if val %}
 						{% for item in val %}
-							<div class="w3-col m4 l3 w3-margin-bottom ">
+							<div class="col-md-3 col-sm-4 mb-3">
 								<a href="{% url 'products:product_detail' item.id %}?catalog={{catalog}}" style="text-decoration: none;" >
-									<div class="w3-card-2 w3-container w3-hover-teal">
-										<div class="w3-display-container w3-margin-top w3-white w3-hower-white w3-border my-border-light-grey" style="height: 200px;">
+									<div class="container-fluid w3-card m-0 py-3 h-100 w3-hover-teal">
+										<div class="w3-display-container w3-white w3-hower-white w3-border my-border-light-grey" style="height: 200px;">
 											<img src="{{item.image.url}}" alt="{{item.name}}" class="w3-display-middle" style="max-width: 90%; max-height: 90%">
 										</div>
 										<h5>{{item.name}}</h5>
@@ -43,7 +43,7 @@
 							</div>
 						{% endfor %}
 					{% else %}
-							<div class="w3-quarter">
+							<div class="col-3">
 								<div class="w3-card-2 w3-container w3-margin-bottom w3-pale-red" style="height: 60px;">
 									<p>Продукты не найдены</p>
 								</div>

@@ -2,6 +2,8 @@ mysqlclient-1.4.6-cp37-cp37m-win32.whl
 media/*/*
 static/*
 host_admin.txt
+git commands.txt
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

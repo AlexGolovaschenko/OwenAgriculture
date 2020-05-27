@@ -8,7 +8,7 @@ class ProductSpecificationInline (admin.StackedInline):
 	extra = 0
 
 class ProductAdmin (admin.ModelAdmin):
-	list_display = ['name', 'model', 'topic', 'used_in_poultry', 'used_in_pigsty']
+	list_display = ['name', 'model', 'topic', 'order', 'used_in_poultry', 'used_in_pigsty']
 	inlines = [ProductSpecificationInline]
 
 class ProductTopicAdmin (admin.ModelAdmin):

@@ -21,23 +21,23 @@
 {% block content %} 
 	{% if topics %}
 		{% for topic in topics %}
-			<div class="w3-container">
-				<h2 class="w3-border-bottom">{{topic.headline}}</h2>
+			<div class="container-fluid p-0">
+				<h1 class="w3-border-bottom w3-xlarge text-dark py-1">{{topic.headline}}</h2>
 			</div>
 
-			<div class="row px-3">
+			<div class="row px-2">
 			{% for key, val in items.items %}
 				{% if key == topic.headline  %}
 					{% if val %}
 						{% for item in val %}
-							<div class="col-md-3 col-sm-4 mb-3">
+							<div class="col-md-3 col-sm-4 mb-3 px-2">
 								<a href="{% url 'products:product_detail' item.id %}?catalog={{catalog}}" style="text-decoration: none;" >
-									<div class="container-fluid w3-card m-0 py-3 h-100 w3-hover-teal">
-										<div class="w3-display-container w3-white w3-hower-white w3-border my-border-light-grey" style="height: 200px;">
+									<div class="container-fluid w3-card m-0 py-3 h-100 w3-hover-teal text-dark">
+										<div class="w3-display-container w3-white w3-hower-white w3-border-bottom my-border-light-grey" style="height: 180px;">
 											<img src="{{item.image.url}}" alt="{{item.name}}" class="w3-display-middle" style="max-width: 90%; max-height: 90%">
 										</div>
-										<h5>{{item.name}}</h5>
-										<p class="w3-small">{{item.short_description}}</p>
+										<h5 class="w3-medium mt-2">{{item.name}}</h5>
+										<p class="w3-small ">{{item.short_description}}</p>
 									</div>
 								</a>
 							</div>

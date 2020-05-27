@@ -45,9 +45,6 @@ def _catalog_context_filter(catalog):
 			items[topic.headline] = topic.product_set.filter()
 			title = 'Каталог'
 			cat = 'full'		
-	else:
-		title = 'Каталог'
-		cat = 'full'
 
 	# remove all empty topics
 	topics = []

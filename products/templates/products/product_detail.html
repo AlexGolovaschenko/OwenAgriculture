@@ -72,30 +72,6 @@ product_detail.html
 {% endblock %}
 
 
-
-{% block product_detail_script %}
-<script>
-	$(function(){
-	    $(window).scroll(function() {
-	        if($(this).scrollTop() >= 35) {
-	            $('nav.sidebar').addClass('stickytop');
-	        }
-	        else{
-	            $('nav.sidebar').removeClass('stickytop');
-	        } 
-
-	        var scrollBottom = $(document).height() - $(window).scrollTop();
-          var baseOffset = 90;
-	        var offset = 0;
-	        var navbarHeight =  $('nav.sidebar').outerHeight() + baseOffset;
-          var footerHeight =  $('footer.mainFooter').outerHeight();
-	        if ((scrollBottom-footerHeight) <= navbarHeight) {
-	        	offset = (baseOffset + (scrollBottom-footerHeight) - navbarHeight).toString() + 'px';
-	        } else {
-            offset = baseOffset.toString() + 'px'
-          };
-	        $('nav.sidebar').css('top',  offset);
-	    });
-	});
-</script>
+{% block sticky_sidebar_script %}
+  {% include "products/sticky_sidebar_script.html" %}
 {% endblock %}

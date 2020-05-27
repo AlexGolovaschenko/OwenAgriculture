@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import FileExtensionValidator
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 from PIL import Image
@@ -6,7 +7,12 @@ from PIL import Image
 class ProductTopic (models.Model):
 	headline = models.CharField(verbose_name='Название', max_length=200)
 	description = models.TextField(verbose_name='Описание')
-	icon = models.ImageField(default='topic_icon_default.png', upload_to='topic_icons' )
+	icon = models.FileField(
+					default='topic_icon_default.png', 
+					upload_to='topic_icons', 
+					validators=[FileExtensionValidator(['svg'])],
+					verbose_name='Иконка (.svg)' )
+	# icon = models.ImageField(default='topic_icon_default.png', upload_to='topic_icons' )
 	order = models.PositiveSmallIntegerField(verbose_name='Порядок отображения', default=0)
 
 	def __str__ (self):

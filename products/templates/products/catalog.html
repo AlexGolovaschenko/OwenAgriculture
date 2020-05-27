@@ -18,45 +18,74 @@
 
 {% block title %} Owen Agriculture - {{title}} {% endblock %}
 
-{% block content %} 
+{% block content %}
 	{% if topics %}
+	<div class="container-fluid m-0" >
+	  <div class="row" style="min-height: 70vh;">
+
+	    <!-- navbar -->
+	    <nav class="col-3 my-light-grey sidebar-shadow" id="myScrollspy" style="width:260px;">
+	      <nav class="sidebar mt-0" style="width:260px;">
+	        <ul class="nav nav-pills flex-column py-2">
+	          {% for topic in topics %}
+	            <li class="nav-item">
+	              <a class="nav-link round-0 w3-border-bottom w3-hover-teal w3-medium p-1 pt-2" href="#topic{{forloop.counter}}">
+	              	<img src="{{topic.icon.url}}" style="max-height: 25px; max-width: 25px;" class="mr-1 p-0 m-0">
+	              	{{topic.headline}}
+	              </a>
+	            </li>
+	          {% endfor %}
+	        </ul>
+	      </nav>
+	    </nav>
+
+		<div class="col-9">
 		{% for topic in topics %}
+			<div id='topic{{forloop.counter}}' class="anchor"></div>
 			<div class="container-fluid p-0">
-				<h1 class="w3-border-bottom w3-xlarge text-dark py-1">{{topic.headline}}</h2>
+				<h1 class="w3-border-bottom w3-xlarge text-dark py-1">{{topic.headline}}</h1>
 			</div>
 
 			<div class="row px-2">
-			{% for key, val in items.items %}
-				{% if key == topic.headline  %}
-					{% if val %}
-						{% for item in val %}
-							<div class="col-md-3 col-sm-4 mb-3 px-2">
-								<a href="{% url 'products:product_detail' item.id %}?catalog={{catalog}}" style="text-decoration: none;" >
-									<div class="container-fluid w3-card m-0 py-3 h-100 w3-hover-teal text-dark">
-										<div class="w3-display-container w3-white w3-hower-white w3-border-bottom my-border-light-grey" style="height: 180px;">
-											<img src="{{item.image.url}}" alt="{{item.name}}" class="w3-display-middle" style="max-width: 90%; max-height: 90%">
+				{% for key, val in items.items %}
+					{% if key == topic.headline  %}
+						{% if val %}
+							{% for item in val %}
+								<div class="col-md-3 col-sm-4 mb-3 px-2">
+									<a href="{% url 'products:product_detail' item.id %}?catalog={{catalog}}" style="text-decoration: none;" >
+										<div class="container-fluid w3-card m-0 py-3 h-100 w3-hover-teal text-dark">
+											<div class="w3-display-container w3-white w3-hower-white w3-border-bottom my-border-light-grey" style="height: 180px;">
+												<img src="{{item.image.url}}" alt="{{item.name}}" class="w3-display-middle" style="max-width: 90%; max-height: 90%">
+											</div>
+											<h5 class="w3-medium mt-2">{{item.name}}</h5>
+											<p class="w3-small ">{{item.short_description}}</p>
 										</div>
-										<h5 class="w3-medium mt-2">{{item.name}}</h5>
-										<p class="w3-small ">{{item.short_description}}</p>
-									</div>
-								</a>
-							</div>
-						{% endfor %}
-					{% else %}
-							<div class="col-3">
-								<div class="w3-card-2 w3-container w3-margin-bottom w3-pale-red" style="height: 60px;">
-									<p>Продукты не найдены</p>
+									</a>
 								</div>
-							</div>
+							{% endfor %}
+						{% else %}
+								<div class="col-3">
+									<div class="w3-card-2 w3-container w3-margin-bottom w3-pale-red" style="height: 60px;">
+										<p>Продукты не найдены</p>
+									</div>
+								</div>
+						{% endif %}
 					{% endif %}
-				{% endif %}
-			{% endfor %}
-			</div>
+				{% endfor %}
+				</div>
 
-		{% endfor %}
+			{% endfor %}
+		</div>
+	  </div>
+	</div>
 	{% else %}
 		<br>
 		<p class="w3-panel  w3-card-2 bg-warning p-2" style="height: 60px;">На текущий момент в данном каталоге нет продуктов.</p>
+		<br>
 	{% endif %}
-	<br>
+{% endblock %}
+
+
+{% block sticky_sidebar_script %}
+  {% include "products/sticky_sidebar_script.html" %}
 {% endblock %}

@@ -9,15 +9,18 @@ POULTRY = 'poultry'
 FULL = 'full'
 
 def poultry_catalog(request):
+	# topic_filter = request.GET.get('topic_filter', '')
 	context = _catalog_context_filter(POULTRY)
 	return render(request, 'products/catalog.html', context)
 
 
 def pigsty_catalog(request):
+	# topic_filter = request.GET.get('topic_filter', '')	
 	context = _catalog_context_filter(PIGSTY)
 	return render(request, 'products/catalog.html', context)
 
 def full_catalog(request):
+	# topic_filter = request.GET.get('topic_filter', '')
 	context = _catalog_context_filter(FULL)
 	return render(request, 'products/catalog.html', context)
 
@@ -51,6 +54,12 @@ def _catalog_context_filter(catalog):
 	for t in all_topics:
 		if items[t.headline] :
 			topics.append(t)
+
+	# return just selcted topic items
+	# if topic_filter:
+	#	sel = topics[topic_filter]
+	#	topics = []
+	#	topics.append(sel)
 
 	# return page context
 	return {'topics': topics, 'items': items, 'title': title, 'catalog':cat }

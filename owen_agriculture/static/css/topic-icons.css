@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../topic-icons-font/icomoon.eot?65o0ot');
+  src:  url('../topic-icons-font/icomoon.eot?65o0ot#iefix') format('embedded-opentype'),
+    url('../topic-icons-font/icomoon.ttf?65o0ot') format('truetype'),
+    url('../topic-icons-font/icomoon.woff?65o0ot') format('woff'),
+    url('../topic-icons-font/icomoon.svg?65o0ot#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-electric-board:before {
+  content: "\e900";
+}
+.icon-fan:before {
+  content: "\e901";
+}
+.icon-motor:before {
+  content: "\e902";
+}
+.icon-sensor:before {
+  content: "\e903";
+}
+.icon-ventilation-grid:before {
+  content: "\e904";
+}
+.icon-damper:before {
+  content: "\e905";
+}
+.icon-cooling:before {
+  content: "\e906";
+}

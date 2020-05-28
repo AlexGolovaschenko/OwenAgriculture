@@ -7,12 +7,7 @@ from PIL import Image
 class ProductTopic (models.Model):
 	headline = models.CharField(verbose_name='Название', max_length=200)
 	description = models.TextField(verbose_name='Описание')
-	icon = models.FileField(
-					default='topic_icon_default.png', 
-					upload_to='topic_icons', 
-					validators=[FileExtensionValidator(['svg'])],
-					verbose_name='Иконка (.svg)' )
-	# icon = models.ImageField(default='topic_icon_default.png', upload_to='topic_icons' )
+	icon_class = models.CharField(default='icon-fan', max_length=100, verbose_name='Символ иконки (CSS-класс)' )
 	order = models.PositiveSmallIntegerField(verbose_name='Порядок отображения', default=0)
 
 	def __str__ (self):

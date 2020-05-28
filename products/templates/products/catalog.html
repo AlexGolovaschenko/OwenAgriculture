@@ -29,8 +29,8 @@
 	        <ul class="nav nav-pills flex-column py-2">
 	          {% for topic in topics %}
 	            <li class="nav-item">
-	              <a class="nav-link round-0 w3-border-bottom w3-hover-teal w3-medium p-1 pt-2" href="#topic{{forloop.counter}}">
-	              	<img src="{{topic.icon.url}}" style="max-height: 25px; max-width: 25px;" class="mr-1 p-0 m-0">
+	              <a class="nav-link round-0 w3-border-bottom w3-hover-teal w3-medium p-1 mt-1" href="#topic{{forloop.counter}}" style="">
+	              	<span class="topic-icon {{topic.icon_class}}" ></span>
 	              	{{topic.headline}}
 	              </a>
 	            </li>

@@ -68,16 +68,23 @@
 }
 
 
-.svg-icon  {
-	fill: #94d31b !important; 
+.topic-icon  {
+	font-size:20px;   
+	display: inline-block;
+  	vertical-align: middle;
+  	line-height: normal; 
+  	padding: 0;
+  	padding-right: 4px; 
+  	margin: 0;
 }
 
-.svg-icon path{
-  fill: #94d31b  !important;
+a .topic-icon {
+	color: rgb(0, 143, 134);
 }
-.svg-icon text{
-  fill: #94d31b  !important;
+a:hover .topic-icon {
+	color: white;
 }
+
 
 .sidebar-shadow{
 	box-shadow:-5px 0 5px -2px rgba(0,0,0,0.16), 5px 0 5px -2px rgba(0,0,0,0.12);

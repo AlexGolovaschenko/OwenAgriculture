@@ -43,36 +43,7 @@
 
 <body class="text-dark" {% block scrollable %}{% endblock %}>
 	<!-- Navbar -->
-	<div class="fixed-top w3-white">
-	<div class="w3-content p-2" style="max-width:1140px;">
-		<div class="d-flex">
-			<div class="mr-auto">
-				<a class="" href="{% url 'home' %}">
-					<img src="{% static 'img/logo-dark.png' %}" style="height:40px;">
-				</a>
-			</div>
-			<div class="d-none d-md-inline-block text-dark px-2">
-				<p class="p-0 m-0">Центральный офис: <b class="text-dark-teal">+7 (495) 64-111-56</b></p>
-				<p class="w3-small p-0 m-0">E-mail: <a class="w3-text-teal" href="mailto:sales@owen.ru">sales@owen.ru</a></p>
-			</div>
-		</div>
-	</div>
-	</div>
-
-	<nav class="fixed-top w3-teal" style="margin-top: 55px;">
-	<div class="d-md-flex justify-content-center">
-		<div class="d-md-flex flex-md-row justify-content-center w-100 px-2" style="max-width:1140px;">
-			<a class="w3-button w3-large w3-text-light-grey w3-hover-dark-teal w-100 p-1 text-nowrap" style="text-decoration: none; max-width: 100%;" href="{% url 'products:poultry_catalog' %}">Птицеводство</a>
-			<a class="w3-button w3-large w3-text-light-grey w3-hover-dark-teal w-100 p-1 text-nowrap" style="text-decoration: none; max-width: 100%;" href="{% url 'products:pigsty_catalog' %}">Свиноводство</a>
-			<a class="w3-button w3-large w3-text-light-grey w3-hover-dark-teal w-100 p-1 text-nowrap" style="text-decoration: none; max-width: 100%;" href="{% url 'projects:projects_list' %}">Проекты</a>
-			<a class="w3-button w3-large w3-text-light-grey w3-hover-dark-teal w-100 p-1 text-nowrap" style="text-decoration: none; max-width: 100%;" href="{% url 'news:news_list' %}">Новости</a>
-			<a class="w3-button w3-large w3-text-light-grey w3-hover-dark-teal w-100 p-1 text-nowrap" style="text-decoration: none; max-width: 100%;" href="{% url 'contacts' %}">Контакты</a>
-			<a class="w3-button w3-large w3-text-light-grey w3-hover-dark-teal w-100 p-1 text-nowrap" style="text-decoration: none; max-width: 100%;" href="{% url 'about' %}">О компании</a>
-		</div>
-	</div>
-	</nav>
-	<div class="d-md-none" style="height: 203px"></div>
-	<div class="d-none d-md-inline-block" style="height: 26px"></div>
+	{% include "navbar.html" %}
 
 	<!-- Banner -->
 	<div style="margin-top:57px;"> 
@@ -89,59 +60,8 @@
 		{% endblock %} 
 	</div>
 
-  <footer class='w3-teal mainFooter'>
-  <div class="w3-content" style="max-width: 1140px">
-	<div class='row p-3' >
-		<div class="col-4 px-2 w3-border-left" style="min-height: 100px">
-			<div class="p-2 h-100">
-				<a href="https://owen.ru/" target="_blank">
-					<img class="align-bottom" src="{% static 'img/logo-owen-white.svg' %}" style="height:30px; padding-right: 6px">
-					<img class="align-bottom" src="{% static 'img/slogan-owen-white.svg' %}" style="height:28px;">
-				</a>
-				<p class="pl-1 mt-2">
-					<a class="w3-text-white" href="https://owen.ru/">www.owen.ru</a> <br/>
-					E-mail: sales@owen.ru <br>
-					1-я ул. Энтузиастов, д. 15, стр. 1
-				</p>
-			</div>		
-		</div>
-		<div class="col-4 px-2 w3-border-left " style="min-height: 100px">
-			<div class="p-2 h-100">
-				<h4>Отдел продаж</h4>
-				<p>
-				Тел.: +7(495) 64-111-56 доб. 2302 <br/>
-				Моб.: +7(962) 302-69-16 <br/>
-				E-mail: a.bakun@owen.ru
-				</p>
-			</div>		
-		</div>
-		<div class="col-4 px-2 w3-border-left w3-border-right" style="min-height: 100px">
-			<div class="p-2 h-100">
-				<h4>Техническая поддержка</h4>
-				<p>
-				Тел.: +7 (495) 64-111-56 доб. 2301 <br/>
-				Моб.: +7 (962) 302-68-75 <br/>
-				Skype: r.gomonilov_owen <br/>
-				E-mail: r.gomonilov@owen.ru
-				</p>
-			</div>
-		</div>
-	</div>
-  </div>
-  </footer>
+	{% include "footer.html" %}
 
 	{% block sticky_sidebar_script %} {% endblock %}
-
-	<script>
-		// Used to toggle the menu on small screens when clicking on the menu button
-		function myFunction() {
-		  var x = document.getElementById("navDemo");
-		  if (x.className.indexOf("w3-show") == -1) {
-		    x.className += " w3-show";
-		  } else { 
-		    x.className = x.className.replace(" w3-show", "");
-		  }
-		}
-	</script>
 </body>
 </html>

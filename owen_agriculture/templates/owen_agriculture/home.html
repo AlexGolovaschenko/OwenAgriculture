@@ -4,7 +4,7 @@
 {% block title %} Owen Agriculture {% endblock %}
 
 {% block content %}
-<div class="pt-3"> 
+<div class="pt-3 mt-3"> 
   <h1 class="text-dark w3-xlarge"><b>РЕШЕНИЯ ДЛЯ ЖИВОТНОВОДСТВА</b></h1>
 
   <div class="container pt-2">
@@ -43,10 +43,16 @@
   </div>
   </div>
 
-  <h1 class="text-dark w3-xlarge"><b>НОВОСТИ</b></h1>
+  <h1 class="text-dark w3-xlarge mt-3"><b>ПОСЛЕДНИЕ НОВОСТИ</b></h1>
   {% include "news/news_list_mini.html" with news_list=latest_news only %}
   <div class="w3-row w3-section w3-center">
-    <a class=" w3-xlarge text-dark-teal w3-hover-text-blue" style="text-decoration: none;" href="{% url 'news:news_list' %}">Другие новости</a>
+    <a class="w3-large w3-button w3-round w3-light-grey w3-hover-blue text-dark-teal w3-text-hover-white" style="text-decoration: none;" href="{% url 'news:news_list' %}">Другие новости</a>
+  </div>
+
+  <h1 class="text-dark w3-xlarge mt-3"><b>ПОСЛЕДНИЕ ПРОЕКТЫ</b></h1>
+  {% include "projects/projects_list_mini.html" with projects_list=latest_projects only %}
+  <div class="w3-row w3-section w3-center">
+      <a class="w3-large w3-button w3-round w3-light-grey w3-hover-blue text-dark-teal w3-text-hover-white" style="text-decoration: none;" href="{% url 'projects:projects_list' %}">Другие проекты</a>
   </div>
   <br>
 </div>

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import get_list_or_404
 from django.http import Http404
 from news.models import Article
+from projects.models import ProjectArticle
 
 def home(request):
 	try:
@@ -9,7 +10,12 @@ def home(request):
 	except:
 		latest_news = []
 
-	context = {'latest_news':latest_news}
+	try:
+		latest_projects = ProjectArticle.objects.filter().order_by('-id')[:5]
+	except:
+		latest_projects = []
+
+	context = {'latest_news':latest_news, 'latest_projects':latest_projects}
 	return render(request, 'owen_agriculture/home.html', context)
 
 def about(request):

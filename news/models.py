@@ -4,7 +4,7 @@ import datetime
 from PIL import Image
 
 class Article(models.Model):
-	header = models.CharField(max_length=200, verbose_name='Название')
+	header = models.TextField(verbose_name='Название')
 	image = models.ImageField(upload_to='news', blank=True, verbose_name='Рисунок')
 	short_description = models.TextField(verbose_name='Краткое описание')	 
 	text = RichTextUploadingField(verbose_name='Текст')

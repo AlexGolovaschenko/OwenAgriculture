@@ -4,35 +4,41 @@
 {% block title %} Owen Agriculture - Проекты {% endblock %}
 
 {% block content %}
-<div class="py-4">
-	<h2>Наши проекты</h2> 
+<div class="py-3">
+	<h2>Реализованные проекты</h2>
+
 	{% if projects_list %}
+		<div class="conteiner-fluid">
 		{% for project in projects_list %}
-		<div class="w3-section">
-		<div class="w3-panel  w3-card-2 w3-padding">
-		<div class="w3-row">
-			{% if project.image %}
-				<a href="{% url 'projects:project_detail' project.id %}" style="text-decoration: none;" >
-					<div class="w3-quarter w3-margin-right w3-margin-bottom">
-						<div class="w3-display-container w3-white" style="height: 200px;">
-							<img src="{{project.image.url}}" alt="{{project.header}}" class="w3-display-middle" style="max-width: 100%; max-height: 100%">
+			<div class="conteiner-fluid w3-border-bottom p-0 m-0 mb-3">
+			<div class="w3-row">
+				{% if project.image %}
+					<a href="{% url 'projects:project_detail' project.id %}" style="text-decoration: none;" >
+						<div class="w3-quarter mr-3 mt-1">
+							<div class="w3-display-container w3-white mb-3" style="max-height: 200px;">
+								<img src="{{project.image.url}}" alt="{{project.header}}" class="w3-display-top" style="max-width: 100%; max-height: 100%">
+							</div>
 						</div>
-					</div>
-				</a>
-			{% endif %}
-			<div class="w3-rest w3-mobile">
-				<a href="{% url 'projects:project_detail' project.id %}" style="text-decoration: none;" >
-					<h3 class="w3-xlarge text-teal w3-hover-text-blue">{{project.header}}</h3>
-				</a>
-				<p class="w3-medium">{{project.short_description}}</p>
+					</a>
+				{% endif %}
+				<div class="w3-rest w3-mobile">
+					<p class="badge badge-secondary float-right w3-medium p-1 ml-3 my-1">{{project.pub_date}}</p>
+					<a href="{% url 'projects:project_detail' project.id %}" style="text-decoration: none;" >
+						<h3 class="w3-xlarge text-teal w3-hover-text-blue mb-1">{{project.header}}</h3>
+					</a>
+					<p class="w3-medium">{{project.short_description}}</p>
+				</div>
 			</div>
-		</div>
-		</div>
-		</div>
+			</div>
+
 		{% endfor %}
+		</div>
+
+
 	{% else %}
 		<br>
-		<p class="w3-panel  w3-card-2 bg-warning p-2" style="height: 60px;">На текущий момент проекты отсутствуют.</p>
+		<p class="w3-panel w3-card-2 bg-warning p-2" style="height: 60px;">На текущий момент проекты отсутствуют.</p>
 	{% endif %}
-</div>	
+
+</div>
 {% endblock %}

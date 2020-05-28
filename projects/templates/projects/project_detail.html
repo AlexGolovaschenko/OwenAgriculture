@@ -7,18 +7,8 @@
 <div class="py-4">
 	<div class="w3-container "> 
 		<h2 class="w3-center w3-border-bottom pb-2">{{project.header}}</h2>
-		<div class="w3-row py-2">
-			{% if project.image %}
-				<div class="w3-display-container w3-third w3-card-2" style="height: 400px;">
-					<img src="{{project.image.url}}" alt="{{project.header}}" class="w3-display-middle" style="max-width: 90%; max-height: 90%">
-				</div>
-			{% endif %}
-
-			<div class="w3-rest w3-container w3-medium">
-				<h2 class="w3-medium" style="margin-top: 0"><b>{{project.short_description}}</b></h2>
-				{{project.text | linebreaks}}
-			</div>
-		</div>
+		<h2 class="w3-medium" style="margin-top: 0"><b>{{project.short_description}}</b></h2>
+		{{project.text | safe}}
 	</div>
 	<br>
 </div>

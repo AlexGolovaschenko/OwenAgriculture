@@ -17,7 +17,7 @@
 	margin-left: 10px;
 	margin-right: 10px;
 }
-.breadcrumb ul, li{
+.breadcrumb ul, .breadcrumb li{
 	list-style-type: none;
 	display: inline;
 	font-size: 15px;

@@ -1,12 +1,13 @@
 from django.db import models
+from ckeditor_uploader.fields import RichTextUploadingField
 from PIL import Image
 
 
 class ProjectArticle(models.Model):
-	header = models.CharField(max_length=200, verbose_name='Название')
+	header = models.TextField(verbose_name='Название')
 	image = models.ImageField(upload_to='projects', blank=True, verbose_name='Рисунок') 
-	short_description = models.CharField(max_length=200, verbose_name='Краткое описание')
-	text = models.TextField(verbose_name='Текст')
+	short_description = models.TextField(verbose_name='Краткое описание')
+	text = RichTextUploadingField(verbose_name='Текст')
 
 	def __str__ (self):
 		return self.header

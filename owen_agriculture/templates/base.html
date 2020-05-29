@@ -43,10 +43,11 @@
 
 <body class="text-dark" {% block scrollable %}{% endblock %}>
 	<!-- Navbar -->
-	{% include "navbar.html" %}
+	<div class="d-none d-md-inline-block">{% include "navbar.html" %}</div>
+	<div class="d-md-none">{% include "navbar_small_scrin.html" %}</div>
 
 	<!-- Banner -->
-	<div style="margin-top:57px;"> 
+	<div> 
 		{% block banner %}{% endblock %} 
 	</div>
 
@@ -54,7 +55,7 @@
 	{% render_breadcrumbs %}
 
 	<!-- Content -->
-	<div class="w3-content" style="max-width:1140px; min-height: 70vh;">  
+	<div class="w3-content px-3" style="max-width:1140px; min-height: 70vh;">  
 		{% block content %}
 			<p class="w3-container">base.html</p>
 		{% endblock %} 

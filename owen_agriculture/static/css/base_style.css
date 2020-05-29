@@ -84,6 +84,10 @@ a:hover .topic-icon {
 	color: white;
 }
 
+.active .topic-icon {
+	color: white;
+}
+
 .footer-logo-owen {
 	display: inline-block;
   	vertical-align: middle;

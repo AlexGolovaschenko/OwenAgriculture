@@ -10,15 +10,24 @@
 	        } 
 
 	        var scrollBottom = $(document).height() - $(window).scrollTop();
-          var baseOffset = 90;
+          	var baseOffset = 90;
 	        var offset = 0;
-	        var navbarHeight =  $('nav.sidebar').outerHeight() + baseOffset;
-          var footerHeight =  $('footer.mainFooter').outerHeight();
+	        var navbarHeight =  0;
+          	var footerHeight =  0;
+
+          	if ($( window ).outerWidth()< 768) {
+          		baseOffset = 0; }
+          	else {
+          		baseOffset = 90; 
+          	}
+          	navbarHeight =  $('nav.sidebar').outerHeight() + baseOffset;
+			footerHeight =  $('footer.mainFooter').outerHeight();
+
 	        if ((scrollBottom-footerHeight) <= navbarHeight) {
 	        	offset = (baseOffset + (scrollBottom-footerHeight) - navbarHeight).toString() + 'px';
 	        } else {
-            offset = baseOffset.toString() + 'px'
-          };
+            	offset = baseOffset.toString() + 'px'
+          	};
 	        $('nav.sidebar').css('top',  offset);
 	    });
 	});

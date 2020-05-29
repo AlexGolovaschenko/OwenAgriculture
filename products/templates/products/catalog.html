@@ -24,14 +24,25 @@
 	  <div class="row" style="min-height: 70vh;">
 
 	    <!-- navbar -->
-	    <nav class="col-3 my-light-grey sidebar-shadow" id="myScrollspy" style="width:260px;">
-	      <nav class="sidebar mt-0" style="width:260px;">
-	        <ul class="nav nav-pills flex-column py-2">
+	    <nav class="col-1 col-lg-3 my-light-grey w3-card p-0" id="myScrollspy" style="min-width:80px; max-width:250px;">
+	      <nav class="sidebar mt-0" style="max-width:250px;">
+	      	<!-- on larg screen -->
+	        <ul class="nav nav-pills flex-column py-2 mx-2 d-none d-lg-inline-block">
 	          {% for topic in topics %}
 	            <li class="nav-item">
-	              <a class="nav-link round-0 w3-border-bottom w3-hover-teal w3-medium p-1 mt-1" href="#topic{{forloop.counter}}" style="">
-	              	<span class="topic-icon {{topic.icon_class}}" ></span>
-	              	{{topic.headline}}
+	              <a class="nav-link round-0 w3-border-bottom w3-hover-teal w3-medium text-nowrap p-1 mt-1" href="#topic{{forloop.counter}}" style="">
+	              	<span class="topic-icon w3-xlarge {{topic.icon_class}} p-1" ></span>
+	              	<span class="p-1">{{topic.headline}}</span>
+	              </a>
+	            </li>
+	          {% endfor %}
+	        </ul>
+	        <!-- on small screen -->
+	       	<ul class="nav nav-pills flex-column py-2 mx-2 d-lg-none">
+	          {% for topic in topics %}
+	            <li class="nav-item">
+	              <a class="nav-link round-0 w3-border-bottom w3-hover-teal w3-medium p-1 mt-1 text-center" href="#topic{{forloop.counter}}" style="">
+	              	<span class="topic-icon w3-xlarge {{topic.icon_class}} p-1" style="width: 60px"></span>
 	              </a>
 	            </li>
 	          {% endfor %}
@@ -39,7 +50,7 @@
 	      </nav>
 	    </nav>
 
-		<div class="col-9">
+		<div class="col">
 		{% for topic in topics %}
 			<div id='topic{{forloop.counter}}' class="anchor"></div>
 			<div class="container-fluid p-0">

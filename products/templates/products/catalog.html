@@ -51,14 +51,14 @@
 	      </nav>
 	    </nav>
 
-		<div class="col">
+		<div class="col pr-0">
 		{% for topic in topics %}
 			<div id='topic{{forloop.counter}}' class="anchor"></div>
-			<div class="container-fluid p-0">
-				<h1 class="w3-border-bottom w3-xlarge text-dark py-1">{{topic.headline}}</h1>
+			<div class="container-fluid p-0 m-0">
+				<h1 class="w3-border-bottom w3-xlarge text-dark py-1 m-0">{{topic.headline}}</h1>
 			</div>
 
-			<div class="row px-2">
+			<div class="row p-2">
 				{% for key, val in items.items %}
 					{% if key == topic.headline  %}
 						{% if val %}

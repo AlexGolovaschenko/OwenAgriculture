@@ -2,19 +2,19 @@
 
 
 <nav class="">
-	<div class="w3-teal navbar navbar-dark">
+	<div class="w3-teal navbar navbar-dark p-0">
 		<!-- Brand -->
-		<a class="navbar-brand" href="{% url 'home' %}">
-			<img src="{% static 'img/logo-owen-white.svg' %}" style="height:30px; margin-left: 6px;">
+		<a class="navbar-brand my-2 mx-3" href="{% url 'home' %}">
+			<img src="{% static 'img/logo-owen-white.svg' %}" style="height:30px;">
 		</a>
 
 	    <!-- Toggler/collapsibe Button -->
-	    <button class="navbar-toggler my-border-light-grey" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+	    <button class="navbar-toggler my-border-light-grey my-2 mx-3" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 	      <i class="fa fa-navicon" style="color:#fff; font-size:28px;"></i>
 	    </button>
 
 	    <!-- Navbar links -->
-		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		<div class="collapse navbar-collapse w3-border-top py-1" id="collapsibleNavbar">
 			<div class="d-md-flex justify-content-center w-100" style="max-width:1140px;">
 				<a class="w3-button w3-large w3-text-light-grey w3-hover-dark-teal w-100 p-1 text-nowrap" style="text-decoration: none; max-width: 100%;" href="{% url 'products:poultry_catalog' %}">Птицеводство</a>
 				<a class="w3-button w3-large w3-text-light-grey w3-hover-dark-teal w-100 p-1 text-nowrap" style="text-decoration: none; max-width: 100%;" href="{% url 'products:pigsty_catalog' %}">Свиноводство</a>

@@ -1,4 +1,11 @@
 
+.base-content-width {
+	max-width:1300px;
+}
+.base-content-height {
+	min-height: 72vh;
+}
+
 /* override color scheme */
 .w3-teal, .w3-hover-teal:hover {
 	color: #fff !important; 

@@ -14,8 +14,8 @@
 			<div class="w3-row">
 				{% if project.image %}
 					<a href="{% url 'projects:project_detail' project.id %}" style="text-decoration: none;" >
-						<div class="w3-quarter mr-3 mt-1 mb-3 w3-center">
-							<img src="{{project.image.url}}" alt="{{project.header}}"  style="max-width: 100%; max-height: 200px;">
+						<div class="w3-quarter mr-3 mt-1 mb-3 w3-center" style="width: 250px;">
+							<img src="{{project.image.url}}" alt="{{project.header}}"  style="width: 100%;">
 						</div>
 					</a>
 				{% endif %}

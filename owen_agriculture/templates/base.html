@@ -36,6 +36,7 @@
 	<!-- my style -->
 	<link rel="stylesheet" href="{% static 'css/base_style.css' %}">
 	<link rel="stylesheet" href="{% static 'css/breadcrumbs.css' %}">
+	<link rel="stylesheet" href="{% static 'css/text-editor-extending-style.css' %}">
 	<!-- my fonts -->
 	<link rel="stylesheet" href="{% static 'css/topic-icons.css' %}">
 
@@ -55,7 +56,7 @@
 	{% render_breadcrumbs %}
 
 	<!-- Content -->
-	<div class="w3-content px-3 base-content-width base-content-height">  
+	<div class="w3-content base-content-width base-content-height">  
 		{% block content %}
 			<p class="w3-container">base.html</p>
 		{% endblock %} 

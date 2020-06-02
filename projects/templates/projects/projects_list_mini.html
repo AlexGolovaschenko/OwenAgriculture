@@ -1,20 +1,21 @@
 {% if projects_list %}
-	<div class="conteiner-fluid">
+	<div class="conteiner-fluid article-list">
 	{% for project in projects_list %}
-		<div class="conteiner-fluid w3-border-bottom p-0 m-0 mb-3">
+		<div class="conteiner-fluid w3-border-bottom my-border-light-grey p-0 m-0 mb-3">
 		<div class="w3-row">
 			{% if project.image %}
 				<a href="{% url 'projects:project_detail' project.id %}" style="text-decoration: none;" >
-					<div class="w3-quarter mr-3 mt-1 mb-2 w3-center" style="width: 180px;">
-						<img src="{{project.image.url}}" alt="{{project.header}}"  style="max-width: 100%; max-height: 150px;">
+					<div class="w3-col m3 l2 mr-3 mt-1 mb-2 w3-center">
+						<img src="{{project.image.url}}" alt="{{project.header}}" class="banner-image" >
 					</div>
 				</a>
 			{% endif %}
 			<div class="w3-rest w3-mobile">
 				<a href="{% url 'projects:project_detail' project.id %}" style="text-decoration: none;" >
-					<h3 class="w3-large text-teal w3-hover-text-blue mb-1">{{project.header}}</h3>
+					<h3 class="w3-large header-font text-teal w3-hover-text-blue mb-1">{{project.header}}</h3>
 				</a>
-				<p class="w3-medium">{{project.short_description}}</p>
+				<p class="w3-medium text-font">{{project.short_description}}</p>
+				<a href="{% url 'projects:project_detail' project.id %}" class="w3-button w3-round w3-light-grey w3-hover-blue text-dark-teal w3-text-hover-white mb-3" style="text-decoration: none;">Подробнее</a>
 			</div>
 		</div>
 		</div>

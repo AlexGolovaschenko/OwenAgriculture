@@ -63,15 +63,19 @@
 					{% if key == topic.headline  %}
 						{% if val %}
 							{% for item in val %}
-								<div class="col-md-3 col-sm-4 mb-3 px-2">
+								<div class="col-md-3 col-sm-4 mb-3 catalog-card px-2">
 									<a href="{% url 'products:product_detail' item.id %}?catalog={{catalog}}" style="text-decoration: none;" >
-										<div class="container-fluid w3-card m-0 py-3 h-100 w3-hover-teal text-dark">
-											<div class="w3-display-container w3-white w3-hower-white w3-border-bottom my-border-light-grey" style="height: 180px;">
-												<img src="{{item.image.url}}" alt="{{item.name}}" class="w3-display-middle" style="max-width: 90%; max-height: 90%">
+
+										<div class="container-fluid w3-card m-0 p-0 pt-2 h-100">
+											<div class="w3-display-container w3-white my-0 mx-2 p-0" style="height: 180px;">
+												<img src="{{item.image.url}}" alt="{{item.name}}" class="w3-display-middle">
 											</div>
-											<h5 class="w3-medium font-weight-bold mt-2">{{item.model}}</h5>
-											<p class="w3-medium m-0">{{item.short_description}}</p>
+											<div class="w3-border-top my-border-light-grey text-dark mx-3 my-2 px-0 py-2">
+												<h5 class="w3-medium catalog-card-header font-weight-bold mb-1">{{item.model}}</h5>
+												<p class="w3-medium m-0">{{item.short_description}}</p>
+											</div>
 										</div>
+
 									</a>
 								</div>
 							{% endfor %}

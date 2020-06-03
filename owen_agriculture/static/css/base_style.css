@@ -134,7 +134,6 @@ a:hover .topic-icon {
 	width: 60%;
 }
 }
-
 .header-font {
 	font-family: Montserrat, Arial, "Lucida Grande", sans-serif;
     font-weight: 400;
@@ -144,4 +143,22 @@ a:hover .topic-icon {
 	font-family: Montserrat, Arial, "Lucida Grande", sans-serif;
     font-weight: 400;
     line-height: 1.6;
+}
+
+
+.catalog-card img {
+	max-width: 85%; 
+	max-height: 85%;
+	transition: max-width 300ms, max-height 300ms;
+}
+.catalog-card:hover img {
+	max-width: 100%; 
+	max-height: 100%;
+}
+.catalog-card .catalog-card-header {
+	color: rgb(50, 50, 50) !important;
+	transition: color 300ms;
+}
+.catalog-card:hover .catalog-card-header {
+	color:#2196F3!important;
 }

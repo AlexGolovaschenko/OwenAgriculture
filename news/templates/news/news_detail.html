@@ -6,8 +6,12 @@
 {% block content %} 
 	<div class="w3-container">
 	<div class="py-4">
-		<h2 class="w3-center w3-border-bottom pb-2">{{article.header}}</h2>
-		<div class="w3-row py-2">
+		<div class="w3-border-bottom mb-3 mx-0 p-0">
+			<h2 class="w3-center p-0 m-0">{{article.header}}</h2>
+			<p class="badge badge-light w3-medium header-font w3-white text-teal py-1 px-3 m-0">{{article.pub_date}}</p>
+		</div>
+
+		<div class="w3-row">
 
 			{% if article.image %}
 			<div class="w3-card w3-col l4 m4 s12 mb-3 p-1">

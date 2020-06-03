@@ -25,24 +25,27 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-electric-board:before {
+.icon-cooling:before {
   content: "\e900";
 }
-.icon-fan:before {
+.icon-damper:before {
   content: "\e901";
 }
-.icon-motor:before {
+.icon-electric-board:before {
   content: "\e902";
 }
-.icon-sensor:before {
+.icon-fan:before {
   content: "\e903";
 }
-.icon-ventilation-grid:before {
+.icon-motor:before {
   content: "\e904";
 }
-.icon-damper:before {
+.icon-pc:before {
   content: "\e905";
 }
-.icon-cooling:before {
+.icon-sensor:before {
   content: "\e906";
+}
+.icon-ventilation-grid:before {
+  content: "\e907";
 }

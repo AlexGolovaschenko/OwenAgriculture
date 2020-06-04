@@ -54,16 +54,16 @@
 		<div class="col pr-0">
 		{% for topic in topics %}
 			<div id='topic{{forloop.counter}}' class="anchor"></div>
-			<div class="container-fluid p-0 m-0">
+			<div class="container-fluid p-0 pr-3 m-0">
 				<h1 class="w3-border-bottom w3-xlarge text-dark py-1 m-0">{{topic.headline}}</h1>
 			</div>
 
-			<div class="row p-2 m-0">
+			<div class="row px-0 py-2 m-0">
 				{% for key, val in items.items %}
 					{% if key == topic.headline  %}
 						{% if val %}
 							{% for item in val %}
-								<div class="col-md-3 col-sm-4 mb-3 catalog-card px-2">
+								<div class="col-md-3 col-sm-4 mb-3 catalog-card p-0 pr-3">
 									<a href="{% url 'products:product_detail' item.id %}?catalog={{catalog}}" style="text-decoration: none;" >
 
 										<div class="container-fluid w3-card m-0 p-0 pt-2 h-100">

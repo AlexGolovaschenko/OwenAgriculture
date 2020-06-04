@@ -63,11 +63,27 @@
 }@keyframes opac{from{opacity:0.7} to{opacity:1}}
 
 
-.sidebar {}
+.sidebar{}
 .stickytop {
 	position:fixed !important;
 	top: 90px;
 }
+.hidden-sidebar {
+	position: absolute;
+	top: 0px;
+	left: -400px;
+	z-index: 1000;
+	width: 300px;
+	transition: left 500ms;
+}
+ .hidden-sidebar-content {
+	min-width: 300px; 
+	height: 100%; 
+	overflow: auto; 
+	position: fixed;
+}
+
+
 
 .nav-link.active  {
  	color: #fff !important; 
@@ -98,10 +114,6 @@ a:hover .topic-icon {
 .footer-logo-owen {
 	display: inline-block;
   	vertical-align: middle;
-}
-
-.sidebar-shadow{
-	box-shadow:-5px 0 5px -2px rgba(0,0,0,0.16), 5px 0 5px -2px rgba(0,0,0,0.12);
 }
 
 .anchor {
@@ -162,3 +174,4 @@ a:hover .topic-icon {
 .catalog-card:hover .catalog-card-header {
 	color:#2196F3!important;
 }
+

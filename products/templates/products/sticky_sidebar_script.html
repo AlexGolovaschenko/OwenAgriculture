@@ -29,6 +29,13 @@
             	offset = baseOffset.toString() + 'px'
           	};
 	        $('nav.sidebar').css('top',  offset);
+
+	        var h = '100%'
+	        var windowHeight = $( window ).height()
+	        if (windowHeight > (scrollBottom-footerHeight)) {
+	        	h = (   windowHeight + (scrollBottom-windowHeight-footerHeight)    ).toString() + 'px' ;
+	    	}
+			$('.hidden-sidebar-content').css('height',  h);
 	    });
 	});
 </script>

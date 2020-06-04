@@ -22,14 +22,14 @@
 {% block content %}
 <div>
 <div class="container-fluid m-0" >
-  <div class="row" style="min-height: 70vh;">
+  <div class="row base-content-height">
 
     <!-- navbar -->
-    <nav class="col-3 my-light-grey w3-card" id="myScrollspy" style="min-width:290px; max-width:290px;">
+    <nav class="col-3 d-none d-md-block my-light-grey w3-card" id="myScrollspy" style="min-width:290px; max-width:290px;">
       <nav class="sidebar mt-0" style="width:260px;">
         <a href="#top" style="text-decoration: none;">
           <div class="w3-display-container m-0" style="height: 200px;">
-            <img src="{{product.image.url}}" alt="{{product.name}}" class="w3-display-middle" style="max-width: 100%; max-height: 100%">
+            <img src="{{product.image.url}}" alt="{{product.name}}" class="w3-display-middle py-3" style="max-width: 100%; max-height: 100%">
           </div>
           <h4 class="w3-center w3-large text-dark m-0"><b>{{product.model}}</b></h4>
         </a>
@@ -44,9 +44,46 @@
       </nav>
     </nav>
 
+    <!-- navbar on small screen -->
+    <nav class="col-1 d-md-none p-0" style="min-width:80px; max-width:80px;">
+        <!-- open button -->
+        <div class="my-light-grey w3-card w-100 h-100 p-0" id="sidebarSmallPanel">
+          <div class="sticky-top" style="z-index: 100">
+            <button class="btn btn-light m-2 mt-3" onclick="sidebar_open()">
+                <i class="fa fa-list-ul text-teal px-1" style="font-size:32px;"></i>
+            </button>
+          </div>  
+        </div>
+
+        <!-- sidebar content -->
+        <div class="sidebar hidden-sidebar" id="sidebarCollapse">
+          <div id="myScrollspy">
+            <nav class="sidebar m-0">  
+              <div class="hidden-sidebar-content my-light-grey w3-rightbar w3-border-teal px-3" style="width: 300px;">
+
+                <div class="w3-display-container" style="height: 70px">
+                  <button class="w3-display-right btn btn-light border my-1" onclick="sidebar_close()">
+                    <i class="fa fa-remove text-teal p-1" style="font-size:18px;"></i>
+                  </button> 
+                  <h4 class="w3-display-left w3-large text-dark pt-3" style="max-width: 70%"><b>{{product.model}}</b></h4>
+                </div>
+
+                <ul class="nav nav-pills flex-column ">
+                  {% for s in spec %}
+                    <li class="nav-item">
+                      <a class="nav-link round-0 w3-border-bottom w3-hover-teal w3-medium p-1 mt-1" href="#section{{forloop.counter}}">{{s.header}}</a>
+                    </li>
+                  {% endfor %}
+                </ul> 
+
+              </div>
+            </nav>
+          </div>
+        </div>
+    </nav>
 
     <!-- product description -->
-    <div class="col">
+    <div class="col" style="overflow-x: hidden;">
       <div id="top" class="anchor" style="top: -130px;"></div>
       <h2 class="w3-border-bottom">{{product.name}}</h2>
       <div class="w3-display-container" style="height: 300px;">
@@ -58,8 +95,7 @@
         <div class="w3-panel w3-light-grey w3-large w3-padding">{{s.header}}</div>
         <div class="w3-margin-left">
           <p class="w3-large">{{s.specification|safe}}</p>
-        </div>
-      
+        </div> 
       {% endfor %}
     </div>
 
@@ -73,4 +109,17 @@
 
 {% block sticky_sidebar_script %}
   {% include "products/sticky_sidebar_script.html" %}
+
+
+  <script>
+    function sidebar_open() {
+      document.getElementById("sidebarCollapse").style.left = "0px";
+      document.getElementById("sidebarSmallPanel").style.visibility = "hidden";
+    }
+
+    function sidebar_close() {
+      document.getElementById("sidebarCollapse").style.left = "-500px";
+      document.getElementById("sidebarSmallPanel").style.visibility = "visible";
+    }
+  </script>
 {% endblock %}

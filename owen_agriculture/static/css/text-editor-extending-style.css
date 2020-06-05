@@ -12,3 +12,23 @@
 	width: 100% !important;
 	max-width: 700px;
 }
+
+
+.common-table {
+	overflow-x: scroll;
+}
+.common-table table {
+	border: 1px solid rgb(0, 143, 134);
+}
+
+.common-table th {
+	color: #fff; 
+	padding-left: 5px;
+	padding-right: 5px;
+	background-color: rgb(0, 143, 134);
+	border-color: #fff;
+}
+.common-table td {
+	padding-left: 5px;
+	padding-right: 5px;
+}

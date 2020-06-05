@@ -93,8 +93,8 @@
       {% for s in spec %}
       <div id="section{{forloop.counter}}" class="anchor"></div>
         <div class="w3-panel w3-light-grey w3-large w3-padding">{{s.header}}</div>
-        <div class="w3-margin-left">
-          <p class="w3-large">{{s.specification|safe}}</p>
+        <div>
+          {{s.specification|safe}}
         </div> 
       {% endfor %}
     </div>

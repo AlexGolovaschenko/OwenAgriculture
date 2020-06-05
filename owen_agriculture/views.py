@@ -6,7 +6,7 @@ from projects.models import ProjectArticle
 
 def home(request):
 	try:
-		latest_news = Article.objects.filter().order_by('-id')[:5]
+		latest_news = Article.objects.filter().order_by('-pub_date')[:5]
 	except:
 		latest_news = []
 

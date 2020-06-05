@@ -6,7 +6,7 @@ from news.models import Article
 
 def news_home(request):
 	try:
-		li = Article.objects.filter().order_by('-id')
+		li = Article.objects.filter().order_by('-pub_date')
 	except:
 		li = []
 

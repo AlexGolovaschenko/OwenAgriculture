@@ -21,8 +21,8 @@
           		baseOffset = 90; 
           	}
           	navbarHeight =  $('nav.sidebar').outerHeight() + baseOffset;
-			footerHeight =  $('footer.mainFooter').outerHeight();
-
+			footerHeight =  $('#mainFooter').outerHeight();
+			
 	        if ((scrollBottom-footerHeight) <= navbarHeight) {
 	        	offset = (baseOffset + (scrollBottom-footerHeight) - navbarHeight).toString() + 'px';
 	        } else {

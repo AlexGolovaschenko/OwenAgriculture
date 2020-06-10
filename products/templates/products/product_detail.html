@@ -25,7 +25,7 @@
   <div class="row base-content-height">
 
     <!-- navbar -->
-    <nav class="col-3 d-none d-md-block my-light-grey w3-card" id="myScrollspy" style="min-width:290px; max-width:290px;">
+    <nav class="col-3 d-none d-md-block bg-light-grey w3-card" id="myScrollspy" style="min-width:290px; max-width:290px;">
       <nav class="sidebar mt-0" style="width:260px;">
         <a href="#top" style="text-decoration: none;">
           <div class="w3-display-container m-0" style="height: 200px;">
@@ -37,7 +37,7 @@
         <ul class="nav nav-pills flex-column py-2">
           {% for s in spec %}
             <li class="nav-item">
-              <a class="nav-link round-0 w3-border-bottom w3-hover-teal w3-medium p-1 mt-1" href="#section{{forloop.counter}}">{{s.header}}</a>
+              <a class="nav-link round-0 w3-border-bottom bg-hover-teal w3-medium p-1 mt-1" href="#section{{forloop.counter}}">{{s.header}}</a>
             </li>
           {% endfor %}
         </ul>
@@ -47,7 +47,7 @@
     <!-- navbar on small screen -->
     <nav class="col-1 d-md-none p-0" style="min-width:80px; max-width:80px;">
         <!-- open button -->
-        <div class="my-light-grey w3-card w-100 h-100 p-0" id="sidebarSmallPanel">
+        <div class="bg-light-grey w3-card w-100 h-100 p-0" id="sidebarSmallPanel">
           <div class="sticky-top" style="z-index: 100">
             <button class="btn btn-light m-2 mt-3" onclick="sidebar_open()">
                 <i class="fa fa-list-ul text-teal px-1" style="font-size:32px;"></i>
@@ -59,7 +59,7 @@
         <div class="sidebar hidden-sidebar" id="sidebarCollapse">
           <div id="myScrollspy">
             <nav class="sidebar m-0">  
-              <div class="hidden-sidebar-content my-light-grey w3-rightbar w3-border-teal px-3" style="width: 300px;">
+              <div class="hidden-sidebar-content bg-light-grey w3-rightbar w3-border-teal px-3" style="width: 300px;">
 
                 <div class="w3-display-container" style="height: 70px">
                   <button class="w3-display-right btn btn-light border my-1" onclick="sidebar_close()">
@@ -71,7 +71,7 @@
                 <ul class="nav nav-pills flex-column ">
                   {% for s in spec %}
                     <li class="nav-item">
-                      <a class="nav-link round-0 w3-border-bottom w3-hover-teal w3-medium p-1 mt-1" href="#section{{forloop.counter}}">{{s.header}}</a>
+                      <a class="nav-link round-0 w3-border-bottom bg-hover-teal w3-medium p-1 mt-1" href="#section{{forloop.counter}}">{{s.header}}</a>
                     </li>
                   {% endfor %}
                 </ul> 
@@ -92,7 +92,7 @@
 
       {% for s in spec %}
       <div id="section{{forloop.counter}}" class="anchor"></div>
-        <div class="w3-panel w3-light-grey w3-large w3-padding">{{s.header}}</div>
+        <div class="w3-panel bg-light-grey w3-large w3-padding">{{s.header}}</div>
         <div>
           {{s.specification|safe}}
         </div> 

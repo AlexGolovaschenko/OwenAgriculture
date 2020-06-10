@@ -10,6 +10,29 @@
   <div class="container pt-2">
   <div class="row">
 
+
+      <div class = "main-icon-container col-md-6 d-flex justify-content-center">
+        <a href="{% url 'products:poultry_catalog' %}" class = "main-icon-container-inner bg-green border-green">
+          <div class="main-icon-image w3-white"><img src="{% static 'img/chicken.svg' %}" alt="poultry"></div>
+          <div class="main-icon-text">
+            <h3>ПТИЦЕВОДСТВО</h3>
+            <p>каталог оборудования для птицеводства</p >     
+          </div>
+        </a>
+      </div>
+
+      <div class = "main-icon-container col-md-6 d-flex justify-content-center">
+        <a href="{% url 'products:pigsty_catalog' %}" class = "main-icon-container-inner bg-blue border-blue">
+          <div class="main-icon-image w3-white"><img src="{% static 'img/pig.svg' %}" alt="pigs"></div>
+          <div class="main-icon-text">
+            <h3>СВИНОВОДСТВО</h3>
+            <p>каталог оборудования для свиноводства</p >     
+          </div>
+        </a>
+      </div>
+
+
+<!--
     <div class="col-md-6 d-flex justify-content-center pb-3">
       <div class="w3-hover-opacity" style="max-width: 500px; max-height: 250px;">
         <a href="{% url 'products:poultry_catalog' %}" >  
@@ -17,7 +40,7 @@
             <img class="card-img-top" src="{% static 'img/chicken_icon.jpg' %}" alt="pigs">
             <div class="card-img-overlay p-0 m-0">
               <div class="d-flex align-items-end w-100 h-100">
-                  <h1 class="w3-text-white text-center background-opacity-teal m-0 p-0" style="height:30%; width: 100%; font-size: 30px;"><b>ПТИЦЕВОДСТВО</b></h1>
+                  <h1 class="w3-text-white text-center bg-opacity-teal m-0 p-0" style="height:30%; width: 100%; font-size: 30px;"><b>ПТИЦЕВОДСТВО</b></h1>
               </div>
             </div>
           </div>
@@ -32,14 +55,14 @@
             <img class="card-img-top" src="{% static 'img/pigs_icon.jpg' %}" alt="pouktry">
             <div class="card-img-overlay p-0 m-0">
               <div class="d-flex align-items-end w-100 h-100">
-                  <h1 class="w3-text-white text-center background-opacity-teal m-0 p-0" style="height:30%; width: 100%; font-size: 30px;"><b>СВИНОВОДСТВО</b></h1>
+                  <h1 class="w3-text-white text-center bg-opacity-teal m-0 p-0" style="height:30%; width: 100%; font-size: 30px;"><b>СВИНОВОДСТВО</b></h1>
               </div>
             </div>
           </div>
         </a>         
       </div>
     </div>
-
+-->
   </div>
   </div>
 
@@ -48,7 +71,7 @@
     {% include "news/news_list_mini.html" with news_list=latest_news only %}
   </div>
   <div class="w3-row w3-section w3-center">
-    <a class="w3-large w3-button w3-round w3-light-grey w3-hover-blue text-dark-teal w3-text-hover-white" style="text-decoration: none;" href="{% url 'news:news_list' %}">Другие новости</a>
+    <a class="w3-large w3-button w3-round bg-light-grey w3-hover-blue text-dark-teal w3-text-hover-white" style="text-decoration: none;" href="{% url 'news:news_list' %}">Другие новости</a>
   </div>
 
   <h1 class="text-dark w3-xlarge mt-3 px-3"><b>РЕАЛИЗОВАННЫЕ ПРОЕКТЫ</b></h1>
@@ -56,7 +79,7 @@
     {% include "projects/projects_list_mini.html" with projects_list=latest_projects only %}
   </div>
   <div class="w3-row w3-section w3-center">
-      <a class="w3-large w3-button w3-round w3-light-grey w3-hover-blue text-dark-teal w3-text-hover-white" style="text-decoration: none;" href="{% url 'projects:projects_list' %}">Другие проекты</a>
+      <a class="w3-large w3-button w3-round bg-light-grey w3-hover-blue text-dark-teal w3-text-hover-white" style="text-decoration: none;" href="{% url 'projects:projects_list' %}">Другие проекты</a>
   </div>
   <br>
 </div>

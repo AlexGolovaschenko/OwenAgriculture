@@ -25,13 +25,13 @@
 	  <div class="row base-content-height">
 
 	    <!-- navbar -->
-	    <nav class="col-1 col-lg-3 my-light-grey w3-card p-0" id="myScrollspy" style="min-width:80px; max-width:250px;">
+	    <nav class="col-1 col-lg-3 bg-light-grey w3-card p-0" id="myScrollspy" style="min-width:80px; max-width:250px;">
 	      <nav class="sidebar mt-0" style="max-width:250px;">
 	      	<!-- on larg screen -->
 	        <ul class="nav nav-pills flex-column py-2 mx-2 d-none d-lg-inline-block">
 	          {% for topic in topics %}
 	            <li class="nav-item">
-	              <a class="nav-link round-0 w3-border-bottom w3-hover-teal w3-medium text-nowrap p-1 mt-1" href="#topic{{forloop.counter}}" style="">
+	              <a class="nav-link round-0 w3-border-bottom bg-hover-teal w3-medium text-nowrap p-1 mt-1" href="#topic{{forloop.counter}}" style="">
 	              	<span class="topic-icon w3-xlarge {{topic.icon_class}} p-1" ></span>
 	              	<span class="p-1">{{topic.headline}}</span>
 	              </a>
@@ -42,7 +42,7 @@
 	       	<ul class="nav nav-pills flex-column py-2 mx-2 d-lg-none">
 	          {% for topic in topics %}
 	            <li class="nav-item">
-	              <a class="nav-link round-0 w3-border-bottom w3-hover-teal w3-medium p-1 mt-1 text-center" href="#topic{{forloop.counter}}" style="">
+	              <a class="nav-link round-0 w3-border-bottom bg-hover-teal w3-medium p-1 mt-1 text-center" href="#topic{{forloop.counter}}" style="">
 	              	<span class="topic-icon w3-xlarge {{topic.icon_class}} p-1" style="width: 60px"></span>
 	              </a>
 	            </li>
@@ -70,7 +70,7 @@
 											<div class="w3-display-container w3-white my-0 mx-2 p-0" style="height: 180px;">
 												<img src="{{item.image.url}}" alt="{{item.name}}" class="w3-display-middle">
 											</div>
-											<div class="w3-border-top my-border-light-grey text-dark mx-3 my-2 px-0 py-2">
+											<div class="w3-border-top border-light-grey text-dark mx-3 my-2 px-0 py-2">
 												<h5 class="w3-medium catalog-card-header font-weight-bold mb-1">{{item.model}}</h5>
 												<p class="w3-medium m-0">{{item.short_description}}</p>
 											</div>

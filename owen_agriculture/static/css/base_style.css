@@ -1,47 +1,104 @@
 
-.base-content-width {
-	max-width:1300px;
-}
-.base-content-height {
-	min-height: 72vh;
+:root {
+	/* colors */	
+	--color-orange: #f58220;
+	--color-red: #9f0412;  
+	--color-blue: #034ea2;  
+	--color-light-blue: #009bdf;  
+	--color-violet: #662d91;  
+	--color-green: #00905e;  
+
+	--color-grey: #d0d8db; /* d0d8db - is used for icon */
+	--color-light-grey: rgb(249, 249, 249); 
+	--color-dark-grey: rgb(50, 50, 50);	
+	--color-granite: #54686f;
+	--color-teal: rgb(0, 143, 134);
+	--color-dark-teal: rgb(27, 107, 101);
+	--color-opacity-teal: rgba(0, 143, 134, 0.45);
+
+	/* sizes */
+	--width-base-content: 1300px;
+	--height-base-content: 72vh;
 }
 
-/* override color scheme */
-.w3-teal, .w3-hover-teal:hover {
+/* --------------------------------------------------------------------------- */
+/* colors */
+.bg-teal, .bg-hover-teal:hover {
 	color: #fff !important; 
-	background-color: rgb(0, 143, 134) !important; }
+	background-color: var(--color-teal) !important; }
 
-.w3-dark-teal, .w3-hover-dark-teal:hover {
+.bg-dark-teal, .bg-hover-dark-teal:hover {
 	color: #fff !important; 
-	background-color: rgb(27, 107, 101) !important; }
+	background-color: var(--color-dark-teal) !important; }
 
-
-
-/* my style */
-.background-opacity-teal, .hover-background-opacity-teal:hover {
+.bg-opacity-teal, .bg-hover-opacity-teal:hover {
 	color: #fff !important; 
-	background-color: rgba(0, 143, 134, 0.45) !important; 
-}
+	background-color: var(--color-opacity-teal) !important;  }
 
-.my-border-light-grey {
-	border-color: rgb(230, 230, 230) !important;
-}
-.my-light-grey, .my-hover-light-grey:hover{
+.bg-light-grey, .bg-hover-light-grey:hover{
 	color: #000 !important; 
 	background-color: rgb(249, 249, 249) !important; }
 
+.bg-granite, .bg-hover-granite:hover {
+	color: #fff !important; 
+	background-color: var(--color-granite) !important; }
+
+.bg-red, .bg-hover-red:hover {
+	color: #fff !important; 
+	background-color: var(--color-red) !important; }
+
+.bg-violet, .bg-hover-violet:hover {
+	color: #fff !important; 
+	background-color: var(--color-violet) !important; }
+
+.bg-blue, .bg-hover-blue:hover {
+	color: #fff !important; 
+	background-color: var(--color-blue) !important; }
+
+.bg-orange, .bg-hover-orange:hover {
+	color: #fff !important; 
+	background-color: var(--color-orange) !important; }
+
+.bg-green, .bg-hover-green:hover {
+	color: #fff !important; 
+	background-color: var(--color-green) !important; }
+
+.border-light-grey {
+	border-color: rgb(230, 230, 230) !important; }
+
+.border-violet {
+	border-color: var(--color-violet) !important; }
+
+.border-blue {
+	border-color: var(--color-blue) !important; }
+
+.border-orange {
+	border-color: var(--color-orange) !important; }
+
+.border-green {
+	border-color: var(--color-green) !important; }
 
 .text-teal{
-	color: rgb(0, 143, 134) !important;
-}
+	color: var(--color-teal) !important; }
+
 .text-dark-teal{
-	color: rgb(27, 107, 101) !important;
-}
+	color: var(--color-dark-teal) !important; }
+
 .text-dark{
-	color: rgb(50, 50, 50) !important;
+	color: var(--color-dark-grey) !important; }
+
+
+/* --------------------------------------------------------------------------- */
+/* sizes */
+.base-content-width {
+	max-width: var(--width-base-content);
+}
+.base-content-height {
+	min-height: var(--height-base-content);
 }
 
 
+/* --------------------------------------------------------------------------- */
 .animate .animate-left, .animate-right {
 	display: none !important;
 	transition: 250ms all;
@@ -63,6 +120,7 @@
 }@keyframes opac{from{opacity:0.7} to{opacity:1}}
 
 
+/* --------------------------------------------------------------------------- */
 .sidebar{}
 .stickytop {
 	position:fixed !important;
@@ -91,6 +149,7 @@
 }
 
 
+/* --------------------------------------------------------------------------- */
 .topic-icon  {
 	font-size:20px;   
 	display: inline-block;
@@ -146,6 +205,8 @@ a:hover .topic-icon {
 	width: 60%;
 }
 }
+
+/* --------------------------------------------------------------------------- */
 .header-font {
 	font-family: Montserrat, Arial, "Lucida Grande", sans-serif;
     font-weight: 400;
@@ -158,6 +219,7 @@ a:hover .topic-icon {
 }
 
 
+/* --------------------------------------------------------------------------- */
 .catalog-card img {
 	max-width: 85%; 
 	max-height: 85%;

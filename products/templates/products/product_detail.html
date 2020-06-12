@@ -21,11 +21,11 @@
 {% block scrollable %} data-spy="scroll" data-target="#myScrollspy" data-offset="1" {% endblock %}
 {% block content %}
 <div>
-<div class="container-fluid m-0" >
+<div class="container-fluid m-0 w3-card" >
   <div class="row base-content-height">
 
     <!-- navbar -->
-    <nav class="col-3 d-none d-md-block bg-light-grey w3-card" id="myScrollspy" style="min-width:290px; max-width:290px;">
+    <nav class="col-3 d-none d-md-block bg-light-grey" id="myScrollspy" style="min-width:290px; max-width:290px;">
       <nav class="sidebar mt-0" style="width:260px;">
         <a href="#top" style="text-decoration: none;">
           <div class="w3-display-container m-0" style="height: 200px;">
@@ -37,7 +37,7 @@
         <ul class="nav nav-pills flex-column py-2">
           {% for s in spec %}
             <li class="nav-item">
-              <a class="nav-link round-0 w3-border-bottom bg-hover-teal w3-medium p-1 mt-1" href="#section{{forloop.counter}}">{{s.header}}</a>
+              <a class="nav-link round-0 w3-border-bottom bg-hover-teal text-dark-grey w3-medium p-1 mt-1" href="#section{{forloop.counter}}">{{s.header}}</a>
             </li>
           {% endfor %}
         </ul>
@@ -71,7 +71,7 @@
                 <ul class="nav nav-pills flex-column ">
                   {% for s in spec %}
                     <li class="nav-item">
-                      <a class="nav-link round-0 w3-border-bottom bg-hover-teal w3-medium p-1 mt-1" href="#section{{forloop.counter}}">{{s.header}}</a>
+                      <a class="nav-link round-0 w3-border-bottom bg-hover-teal text-dark-grey w3-medium p-1 mt-1" href="#section{{forloop.counter}}">{{s.header}}</a>
                     </li>
                   {% endfor %}
                 </ul> 
@@ -83,20 +83,26 @@
     </nav>
 
     <!-- product description -->
-    <div class="col" style="overflow-x: hidden;">
-      <div id="top" class="anchor" style="top: -130px;"></div>
-      <h2 class="w3-border-bottom">{{product.name}}</h2>
-      <div class="w3-display-container" style="height: 300px;">
-        <img src="{{product.image.url}}" alt="{{product.name}}" class="w3-display-middle" style="max-width: 90%; max-height: 90%">
+    <div class="col w3-white ml-1 p-0" style="overflow-x: hidden;">
+      <!-- breadcrumbs -->
+      {% render_breadcrumbs %}
+
+      <div class="px-3">
+        <div id="top" class="anchor" style="top: -130px;"></div>
+        <h2 class="w3-border-bottom">{{product.name}}</h2>
+        <div class="w3-display-container" style="height: 300px;">
+          <img src="{{product.image.url}}" alt="{{product.name}}" class="w3-display-middle" style="max-width: 90%; max-height: 90%">
+        </div>
       </div>
 
       {% for s in spec %}
       <div id="section{{forloop.counter}}" class="anchor"></div>
-        <div class="w3-panel bg-light-grey w3-large w3-padding">{{s.header}}</div>
-        <div>
+        <div class="w3-panel bg-grey w3-large p-3">{{s.header}}</div>
+        <div class="px-3">
           {{s.specification|safe}}
         </div> 
       {% endfor %}
+      
     </div>
 
 

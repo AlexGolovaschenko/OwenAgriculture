@@ -21,6 +21,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&amp;amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
@@ -45,24 +46,14 @@
 
 </head>
 
-<body class="text-dark" {% block scrollable %}{% endblock %}>
+<body class="text-dark text-font bg-grey" {% block scrollable %}{% endblock %}>
 	<!-- Navbar -->
 	<div class="d-none d-md-inline-block">{% include "navbar.html" %}</div>
 	<div class="d-md-none">{% include "navbar_small_scrin.html" %}</div>
 
-	<!-- Banner -->
-	<div class="d-none d-md-inline-block"> 
-		{% block banner %}{% endblock %} 
-	</div>
-
-	<!-- breadcrumbs -->
-	{% render_breadcrumbs %}
-
 	<!-- Content -->
 	<div class="w3-content base-content-width base-content-height">  
-		{% block content %}
-			<p class="w3-container">base.html</p>
-		{% endblock %} 
+		{% block content %}{% endblock %} 
 	</div>
 
 	{% include "footer.html" %}

@@ -1,6 +1,6 @@
 .main-icon-container {
   position: relative;
-  width:450px;
+  width:400px;
   height: 250px;
   background: transparent;
   margin: 0;
@@ -8,7 +8,7 @@
 
 .main-icon-container .main-icon-container-inner {
   position:relative;
-  width: calc(450px - 30px);
+  width: calc(400px - 30px);
   height: calc(250px - 30px);
   background: #000;
   margin: 15px;

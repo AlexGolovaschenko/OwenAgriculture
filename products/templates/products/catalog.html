@@ -2,6 +2,7 @@
 {% load static %}
 {% load django_bootstrap_breadcrumbs %}
 
+
 {% block breadcrumbs %}
     {{ block.super }}
     {% breadcrumb "Главная" "/" %}
@@ -21,17 +22,17 @@
 {% block scrollable %} data-spy="scroll" data-target="#myScrollspy" data-offset="1" {% endblock %}
 {% block content %}
 	{% if topics %}
-	<div class="container-fluid m-0" >
+	<div class="container-fluid m-0 w3-card " >
 	  <div class="row base-content-height">
 
 	    <!-- navbar -->
-	    <nav class="col-1 col-lg-3 bg-light-grey w3-card p-0" id="myScrollspy" style="min-width:80px; max-width:250px;">
+	    <nav class="col-1 col-lg-3 bg-light-grey p-0" id="myScrollspy" style="min-width:80px; max-width:250px;">
 	      <nav class="sidebar mt-0" style="max-width:250px;">
 	      	<!-- on larg screen -->
 	        <ul class="nav nav-pills flex-column py-2 mx-2 d-none d-lg-inline-block">
 	          {% for topic in topics %}
 	            <li class="nav-item">
-	              <a class="nav-link round-0 w3-border-bottom bg-hover-teal w3-medium text-nowrap p-1 mt-1" href="#topic{{forloop.counter}}" style="">
+	              <a class="nav-link round-0 w3-border-bottom bg-hover-teal text-teal w3-hover-text-white text-dark-grey w3-medium text-nowrap p-1 mt-1" href="#topic{{forloop.counter}}" style="">
 	              	<span class="topic-icon w3-xlarge {{topic.icon_class}} p-1" ></span>
 	              	<span class="p-1">{{topic.headline}}</span>
 	              </a>
@@ -51,14 +52,17 @@
 	      </nav>
 	    </nav>
 
-		<div class="col pr-0">
+		<div class="col ml-1 p-0 w3-white">
+		<!-- breadcrumbs -->
+		{% render_breadcrumbs %}
+
 		{% for topic in topics %}
 			<div id='topic{{forloop.counter}}' class="anchor"></div>
-			<div class="container-fluid p-0 pr-3 m-0">
+			<div class="container-fluid p-0 px-3 m-0">
 				<h1 class="w3-border-bottom w3-xlarge text-dark py-1 m-0">{{topic.headline}}</h1>
 			</div>
 
-			<div class="row px-0 py-2 m-0">
+			<div class="row pl-3 pr-0 py-2 m-0">
 				{% for key, val in items.items %}
 					{% if key == topic.headline  %}
 						{% if val %}
@@ -70,7 +74,7 @@
 											<div class="w3-display-container w3-white my-0 mx-2 p-0" style="height: 180px;">
 												<img src="{{item.image.url}}" alt="{{item.name}}" class="w3-display-middle">
 											</div>
-											<div class="w3-border-top border-light-grey text-dark mx-3 my-2 px-0 py-2">
+											<div class="w3-border-top border-grey text-dark mx-3 my-2 px-0 py-2">
 												<h5 class="w3-medium catalog-card-header font-weight-bold mb-1">{{item.model}}</h5>
 												<p class="w3-medium m-0">{{item.short_description}}</p>
 											</div>

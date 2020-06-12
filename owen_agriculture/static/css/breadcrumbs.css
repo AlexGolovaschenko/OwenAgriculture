@@ -1,13 +1,16 @@
 
 .breadcrumbs-container {
-	background-color: rgb(233, 236, 239) !important;
+	background-color: white;
 	margin-top:0;
 	margin-bottom:0;
 }
 .breadcrumb {
-	color: rgb(160, 160, 160) !important; 
-	background-color: rgb(233, 236, 239) !important;
-	margin-top:0;
+	color: #6b7075; 
+	background-color: white;
+	font-size: 13px;
+    line-height: 19px;
+    font-weight: 300;
+	margin-top:10px;
 	margin-bottom:0;
 	padding-left: 16px;
 	padding-top: 8px;
@@ -24,7 +27,8 @@
 }
 .breadcrumb a{
 	text-decoration: none;
+	color: #6b7075; 
 }
 .breadcrumb a:hover {
-    color: rgb(27, 107, 101);
+    color: #2196F3;
 }

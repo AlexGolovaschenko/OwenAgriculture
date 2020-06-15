@@ -4,27 +4,28 @@
 {% block title %} Owen Agriculture - Новости {% endblock %}
 
 {% block content %} 
-	<div class="w3-container">
-	<div class="py-4">
-		<div class="w3-border-bottom mb-3 mx-0 p-0">
-			<h2 class="w3-center p-0 m-0">{{article.header}}</h2>
-			<p class="badge badge-light w3-medium header-font w3-white text-teal py-1 px-3 m-0">{{article.pub_date}}</p>
-		</div>
-
-		<div class="w3-row">
-
-			{% if article.image %}
-			<div class="w3-card w3-col l4 m4 s12 mb-3 p-1">
-				<img src="{{article.image.url}}" alt="{{article.header}}" style="width: 100%;">
+	<div class="w3-container w3-card w3-white">
+	  <div class="w3-content secondary-content-width">
+		<div class="py-4">
+			<div class="w3-border-bottom mb-3 mx-0 p-0">
+				<h2 class="w3-center p-0 m-0">{{article.header}}</h2>
+				<p class="badge badge-light w3-medium header-font w3-white text-teal py-1 px-3 m-0">{{article.pub_date}}</p>
 			</div>
-			{% endif %}
 
-			<div class="w3-col l8 m8 s12 w3-medium pl-3">
-				<h2 class="w3-medium" style="margin-top: 0"><b>{{article.short_description}}</b></h2>
-				{{article.text | safe}}
+			<div class="w3-row">
+
+				{% if article.image %}
+				<div class="w3-card w3-col l4 m4 s12 mb-3 p-1">
+					<img src="{{article.image.url}}" alt="{{article.header}}" style="width: 100%;">
+				</div>
+				{% endif %}
+
+				<div class="w3-col l8 m8 s12 w3-medium pl-3">
+					<h2 class="w3-medium" style="margin-top: 0"><b>{{article.short_description}}</b></h2>
+					{{article.text | safe}}
+				</div>
 			</div>
 		</div>
-	</div> 
+	  </div> 
 	</div>
-	<br>
 {% endblock %}

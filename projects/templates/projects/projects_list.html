@@ -4,7 +4,8 @@
 {% block title %} Owen Agriculture - Проекты {% endblock %}
 
 {% block content %}
-<div class="p-3 w3-card w3-white" style="min-height: 70vh;">
+<div class="p-3 w3-card w3-white base-content-height">
+  <div class="w3-content secondary-content-width">
 	<h2>Реализованные проекты</h2>
 
 	{% if projects_list %}
@@ -22,9 +23,10 @@
 				<div class="w3-rest w3-mobile">
 					<p class="badge badge-secondary float-right w3-medium p-1 ml-3 my-1">{{project.pub_date}}</p>
 					<a href="{% url 'projects:project_detail' project.id %}" style="text-decoration: none;" >
-						<h3 class="w3-xlarge text-teal w3-hover-text-blue mb-1">{{project.header}}</h3>
+						<h3 class="w3-xlarge text-teal text-hover-dark-teal mb-1">{{project.header}}</h3>
 					</a>
 					<p class="w3-medium">{{project.short_description}}</p>
+					<a href="{% url 'projects:project_detail' project.id %}" class="w3-button w3-border w3-round bg-hover-teal text-dark-teal py-1 mb-3" style="text-decoration: none;">Подробнее</a>
 				</div>
 			</div>
 			</div>
@@ -37,6 +39,6 @@
 		<br>
 		<p class="w3-panel w3-card-2 bg-warning p-2" style="height: 60px;">На текущий момент проекты отсутствуют.</p>
 	{% endif %}
-
+  </div>
 </div>
 {% endblock %}

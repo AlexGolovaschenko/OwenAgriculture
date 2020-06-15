@@ -21,6 +21,7 @@
 
 	/* sizes */
 	--width-base-content: 1570px;
+	--width-secondary-content: 1170px;
 	--height-base-content: 72vh;
 }
 
@@ -114,6 +115,9 @@
 /* sizes */
 .base-content-width {
 	max-width: var(--width-base-content);
+}
+.secondary-content-width {
+	max-width: var(--width-secondary-content);
 }
 .base-content-height {
 	min-height: var(--height-base-content);
@@ -259,7 +263,7 @@ a:hover .topic-icon {
 	max-height: 100%;
 }
 .catalog-card .catalog-card-header {
-	color: var(--color-dark-teal) !important;
+	color: var(--color-base-text) !important;
 	transition: color 300ms;
 }
 .catalog-card:hover .catalog-card-header {

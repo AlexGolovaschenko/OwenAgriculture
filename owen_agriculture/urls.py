@@ -27,7 +27,7 @@ urlpatterns = [
     path('news/', include('news.urls')),
     path('contacts/', views.contacts, name='contacts'),
     path('about/', views.about, name='about'),
-    path('admin/', admin.site.urls),
+    path('owen_admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 

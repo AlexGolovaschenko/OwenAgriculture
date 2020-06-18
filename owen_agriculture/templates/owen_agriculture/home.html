@@ -7,10 +7,11 @@
 
 <div class="p-0 m-0 w3-card w3-white w-100"> 
   <!-- Banner -->
-  <div class="d-none d-md-inline-block w-100 mb-3"> 
-    {% include "banner.html" %}
-  </div>
-
+  {% if banners %}
+    <div class="d-none d-md-inline-block w-100 mb-3"> 
+      {% include "banners/banner.html" with banners=banners only%}
+    </div>
+  {% endif %}
 
   <div class="w3-content secondary-content-width">
     <h1 class="bg-teal w3-large rounded-sm px-3 py-2">РЕШЕНИЯ ДЛЯ ЖИВОТНОВОДСТВА</h1>

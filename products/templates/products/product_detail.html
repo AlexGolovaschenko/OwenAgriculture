@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
+{% load static %}
 {% load django_bootstrap_breadcrumbs %}
+
 
 {% block breadcrumbs %}
     {{ block.super }}
@@ -113,19 +115,7 @@
 {% endblock %}
 
 
-{% block sticky_sidebar_script %}
-  {% include "products/sticky_sidebar_script.html" %}
-
-
-  <script>
-    function sidebar_open() {
-      document.getElementById("sidebarCollapse").style.left = "0px";
-      document.getElementById("sidebarSmallPanel").style.visibility = "hidden";
-    }
-
-    function sidebar_close() {
-      document.getElementById("sidebarCollapse").style.left = "-500px";
-      document.getElementById("sidebarSmallPanel").style.visibility = "visible";
-    }
-  </script>
+{% block sidebar_scripts %}
+  <script type="text/javascript" src="{% static 'products/js/sticky_sidebar.js' %}"></script>
+  <script type="text/javascript" src="{% static 'products/js/sidebar_collapse.js' %}"></script>
 {% endblock %}

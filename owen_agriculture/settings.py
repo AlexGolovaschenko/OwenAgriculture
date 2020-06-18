@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'products.apps.ProductsConfig',
     'news.apps.NewsConfig',
     'projects.apps.ProjectsConfig',
+    'banners.apps.BannersConfig',
     'django_bootstrap_breadcrumbs',
     'ckeditor',
     'ckeditor_uploader',

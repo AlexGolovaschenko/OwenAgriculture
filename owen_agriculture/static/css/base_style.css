@@ -204,8 +204,13 @@ a:hover .topic-icon {
 .anchor {
     display: block;
     position: relative;
-    top: -85px;
+    top: -100px;
     visibility: hidden;
+}
+@media (max-width:768px){
+.anchor {
+    top: -10px;
+}
 }
 
 

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Owen Agriculture - Проекты {% endblock %}
+
+
+{% block content %}
+  <div class="p-3 w3-card w3-white base-content-height">
+    <div class="w3-content secondary-content-width">
+    <h2>Реализованные проекты</h2>
+
+    {% include "projects/projects_list_mini.html" with projects_list=projects_list only %}
+    </div>
+  </div> 
+{% endblock %}

@@ -11,7 +11,7 @@ def projects_list(request):
 		li = []
 
 	context = {'projects_list':li}
-	return render(request, 'projects/projects_list.html', context)
+	return render(request, 'projects/projects_home.html', context)
 
 
 def project_detail(request, id):

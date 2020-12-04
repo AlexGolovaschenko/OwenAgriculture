@@ -1,16 +1,18 @@
 {% load static %}
 
 <div class="fixed-top w3-white">
-<div class="w3-content p-2 base-content-width">
+<div class="w3-content base-content-width">
 	<div class="d-flex">
-		<div class="mr-auto">
+		<div class="mr-auto p-2">
 			<a href="{% url 'home' %}" style="text-decoration: none;">
 				<img src="{% static 'img/logo-dark.svg' %}" style="height:38px; padding-top: 2px">
 			</a>
 		</div>
-		<div class="d-none d-md-inline-block text-dark px-2">
-			<p class="p-0 m-0">Центральный офис: <b class="text-dark-teal">+7 (495) 64-111-56</b></p>
-			<p class="w3-small p-0 m-0">E-mail: <a class="text-teal" href="mailto:sales@owen.ru">sales@owen.ru</a></p>
+		<div class="d-none d-md-inline-block text-dark px-2 py-1">
+			<p class="p-0 m-0">
+				Центральный офис: <b class="text-dark-teal">+7 (495) 64-111-56</b> <br/>
+				E-mail: <b><a class="text-dark-teal" href="mailto:sales@owen.ru">sales@owen.ru</a></b>
+			</p>
 		</div>
 	</div>
 </div>

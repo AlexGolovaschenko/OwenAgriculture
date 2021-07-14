@@ -6,7 +6,7 @@ from projects.models import ProjectArticle
 
 def projects_list(request):
 	try:
-		li = ProjectArticle.objects.filter().order_by('-id')
+		li = ProjectArticle.objects.filter(display=True).order_by('-id')
 	except:
 		li = []
 

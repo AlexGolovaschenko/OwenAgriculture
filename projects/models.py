@@ -8,6 +8,7 @@ class ProjectArticle(models.Model):
 	image = models.ImageField(upload_to='projects', blank=True, verbose_name='Рисунок') 
 	short_description = models.TextField(verbose_name='Краткое описание')
 	text = RichTextUploadingField(verbose_name='Текст')
+	display = models.BooleanField(verbose_name='Показывать', default=True)
 
 	def __str__ (self):
 		return self.header

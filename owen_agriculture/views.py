@@ -7,12 +7,12 @@ from banners.models import Banner
 
 def home(request):
 	try:
-		latest_news = Article.objects.filter().order_by('-pub_date')[:5]
+		latest_news = Article.objects.filter(display=True).order_by('-pub_date')[:5]
 	except:
 		latest_news = []
 
 	try:
-		latest_projects = ProjectArticle.objects.filter().order_by('-id')[:5]
+		latest_projects = ProjectArticle.objects.filter(display=True).order_by('-id')[:5]
 	except:
 		latest_projects = []
 

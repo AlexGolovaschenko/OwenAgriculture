@@ -9,7 +9,8 @@ class Article(models.Model):
 	short_description = models.TextField(verbose_name='Краткое описание')	 
 	text = RichTextUploadingField(verbose_name='Текст')
 	pub_date = models.DateField(verbose_name='Дата публикации', default=datetime.date.today)
-
+	display = models.BooleanField(verbose_name='Показывать', default=True)
+	
 	def __str__ (self):
 		return self.header
 
